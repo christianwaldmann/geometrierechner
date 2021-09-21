@@ -349,7 +349,7 @@ export default function Eingabe({
 					</table>
 					<div className="object-contain ml-2 w-44 h-36">
 						<img
-							src="/assets/belastung.svg"
+							src="assets/belastung.svg"
 							className=""
 							alt="Belastung Skizze"
 						/>

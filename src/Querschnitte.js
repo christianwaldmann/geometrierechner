@@ -9,8 +9,8 @@ function onParameterChange(event, updateFn) {
 
 const kreis = {
 	name: "Kreis",
-	svg_src: "/assets/kreis.svg",
-	png_src: "/assets/kreis.png",
+	svg_src: "assets/kreis.svg",
+	png_src: "assets/kreis.png",
 	parameters: [
 		{
 			intern: "p1",
@@ -613,8 +613,8 @@ const kreis = {
 
 const rechteck = {
 	name: "Rechteck",
-	svg_src: "/assets/rechteck.svg",
-	png_src: "/assets/rechteck.png",
+	svg_src: "assets/rechteck.svg",
+	png_src: "assets/rechteck.png",
 	parameters: [
 		{
 			intern: "p1",
