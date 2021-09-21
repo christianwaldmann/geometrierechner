@@ -1,0 +1,6 @@
+p1: aussendurchmesser	breite
+p2: innendurchmesser	innere breite
+p3: 					hoehe
+p4: 					innere hoehe
+p5: wandstaerke			wandstaerke
+p6: laenge				laenge
