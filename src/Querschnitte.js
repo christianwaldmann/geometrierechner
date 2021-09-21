@@ -877,7 +877,7 @@ const rechteck = {
 				p6 = p6 * lengthUnitEingabe;
 				return (p1 * p3 - p2 * p4) * p6 * dichte * 1000;
 			},
-			formelTex: "\\(m = V \\cdot l\\)",
+			formelTex: "\\(m = V \\cdot ρ\\)",
 			unitHoch: "",
 			isNotLengthUnit: true,
 			unit: "kg",
