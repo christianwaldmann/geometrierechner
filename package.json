@@ -2,7 +2,7 @@
 	"name": "geometrierechner",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "http://christianwaldmann.github.io/geometrierechner",
+	"homepage": "https://www.geometrierechner.de",
 	"dependencies": {
 		"@craco/craco": "^6.2.0",
 		"@react-pdf/renderer": "^2.0.19",
