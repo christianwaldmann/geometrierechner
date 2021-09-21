@@ -11,7 +11,7 @@ export default function App() {
 			<Helmet>
 				<body className="bg-white sm:bg-gray-50" />
 			</Helmet>
-			<Router>
+			<Router basename={process.env.PUBLIC_URL}>
 				<Switch>
 					<Route exact path="/">
 						<Berechnung />
