@@ -216,7 +216,7 @@ const kreis = {
 			requires: ["p1", "p6"],
 		},
 		{
-			bezeichnung: "Gewicht (Masse)",
+			bezeichnung: "Masse",
 			symbol: "m",
 			formel: function calculate(
 				p1,
@@ -856,7 +856,7 @@ const rechteck = {
 			requires: ["p1", "p3", "p6"],
 		},
 		{
-			bezeichnung: "Gewicht (Masse)",
+			bezeichnung: "Masse",
 			symbol: "m",
 			formel: function calculate(
 				p1,

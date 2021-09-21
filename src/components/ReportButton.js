@@ -11,7 +11,7 @@ export default function ReportButton({ ...restProps }) {
 			{({ blob, url, loading, error }) =>
 				loading ? (
 					<button className="flex items-center px-4 py-2 text-white bg-indigo-400 rounded cursor-wait hover:bg-indigo-300">
-						Download Report
+						Report herunterladen
 						<svg
 							className="w-5 h-5 ml-2"
 							fill="currentColor"
@@ -27,7 +27,7 @@ export default function ReportButton({ ...restProps }) {
 					</button>
 				) : (
 					<button className="flex items-center px-4 py-2 text-white bg-indigo-400 rounded hover:bg-indigo-300">
-						Download Report
+						Report herunterladen
 						<svg
 							className="w-5 h-5 ml-2"
 							fill="currentColor"

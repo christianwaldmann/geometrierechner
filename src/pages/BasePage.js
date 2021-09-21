@@ -103,7 +103,7 @@ BasePage.Header = function BasePageHeader() {
 								href="https://github.com/christianwaldmann/geometrierechner"
 								className="flex items-center px-4 py-2 font-semibold text-black hover:text-gray-600"
 							>
-								<span>Source Code</span>
+								<span>Quellcode</span>
 								<svg
 									className="w-4 h-4 ml-1"
 									fill="none"
@@ -147,7 +147,7 @@ BasePage.Header = function BasePageHeader() {
 							href="https://github.com/christianwaldmann/portfolio"
 							className="flex items-center justify-between w-full py-2 text-base font-semibold text-black hover:text-gray-600"
 						>
-							<span>Source Code</span>
+							<span>Quellcode</span>
 							<svg
 								className="w-5 h-5 mr-2"
 								fill="none"
