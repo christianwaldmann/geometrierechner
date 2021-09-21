@@ -13,7 +13,7 @@ export default function App() {
 			</Helmet>
 			<Router basename={process.env.PUBLIC_URL}>
 				<Switch>
-					<Route exact path="/">
+					<Route exact path={["", "/"]}>
 						<Berechnung />
 					</Route>
 					<Route exact path="/formeln">
