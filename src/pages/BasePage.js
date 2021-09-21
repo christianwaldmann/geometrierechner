@@ -100,7 +100,7 @@ BasePage.Header = function BasePageHeader() {
 						</li>
 						<li className="mr-3">
 							<a
-								href="https://github.com/christianwaldmann/portfolio"
+								href="https://github.com/christianwaldmann/geometrierechner"
 								className="flex items-center px-4 py-2 font-semibold text-black hover:text-gray-600"
 							>
 								<span>Source Code</span>
