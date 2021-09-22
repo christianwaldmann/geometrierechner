@@ -33,16 +33,22 @@ export default function Berechnung() {
 	const lengthUnitFactorEingabe = getLengthUnitFactor(lengthUnitEingabe);
 	const lengthUnitFactorAusgabe = getLengthUnitFactor(lengthUnitAusgabe);
 
+	const p1SI = p1 * lengthUnitFactorEingabe;
+	const p2SI = p2 * lengthUnitFactorEingabe;
+	const p3SI = p3 * lengthUnitFactorEingabe;
+	const p4SI = p4 * lengthUnitFactorEingabe;
+	const p5SI = p5 * lengthUnitFactorEingabe;
+	const p6SI = p6 * lengthUnitFactorEingabe;
+
 	const berechneteGroessenDisplayUnit = currentQuerschnittObject.ausgabe.map(
 		(item, index) =>
 			item.formel(
-				p1,
-				p2,
-				p3,
-				p4,
-				p5,
-				p6,
-				lengthUnitFactorEingabe,
+				p1SI,
+				p2SI,
+				p3SI,
+				p4SI,
+				p5SI,
+				p6SI,
 				lengthUnitFactorAusgabe,
 				dichte,
 				emodul,

@@ -144,15 +144,8 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(PI_4 * (p1 * p1 - p2 * p2)) /
 					(lengthUnitAusgabe * lengthUnitAusgabe)
@@ -172,15 +165,8 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (PI * p1) / lengthUnitAusgabe;
 			},
 			formelTex: "\\(U = \\pi \\cdot D\\)",
@@ -197,15 +183,8 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(PI_4 * (p1 * p1 - p2 * p2) * p6) /
 					Math.pow(lengthUnitAusgabe, 3)
@@ -225,7 +204,6 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -234,12 +212,6 @@ const kreis = {
 				kraftInY,
 				drehmoment
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return PI_4 * (p1 * p1 - p2 * p2) * p6 * dichte * 1000;
 			},
 			formelTex: "\\(m = V \\cdot \\rho\\)",
@@ -258,15 +230,8 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(PI_32 * (Math.pow(p1, 4) - Math.pow(p2, 4))) /
 					p1 /
@@ -287,15 +252,8 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(PI_64 * (Math.pow(p1, 4) - Math.pow(p2, 4))) /
 					Math.pow(lengthUnitAusgabe, 4)
@@ -315,15 +273,8 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					Math.sqrt(
 						(PI_64 * (Math.pow(p1, 4) - Math.pow(p2, 4))) /
@@ -345,15 +296,8 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(PI_16 * (Math.pow(p1, 4) - Math.pow(p2, 4))) /
 					p1 /
@@ -374,15 +318,8 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(PI_32 * (Math.pow(p1, 4) - Math.pow(p2, 4))) /
 					Math.pow(lengthUnitAusgabe, 4)
@@ -402,7 +339,6 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -410,12 +346,6 @@ const kreis = {
 				kraftInZ,
 				kraftInY
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(kraftInY * p6) /
 					((PI_32 * (Math.pow(p1, 4) - Math.pow(p2, 4))) / p1) /
@@ -438,7 +368,6 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -446,12 +375,6 @@ const kreis = {
 				kraftInZ,
 				kraftInY
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(kraftInY * Math.pow(p6, 3)) /
 					(3 *
@@ -475,7 +398,6 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -483,12 +405,6 @@ const kreis = {
 				kraftInZ,
 				kraftInY
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return kraftInZ / (PI_4 * (p1 * p1 - p2 * p2)) / 1000000;
 			},
 			formelTex: "\\(σ z = \\frac{Fz}{A}\\)",
@@ -507,7 +423,6 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -515,12 +430,6 @@ const kreis = {
 				kraftInZ,
 				kraftInY
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					((kraftInZ / (PI_4 * (p1 * p1 - p2 * p2))) * p6) /
 					(emodul * 1000000) /
@@ -541,7 +450,6 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -550,12 +458,6 @@ const kreis = {
 				kraftInY,
 				drehmoment
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					drehmoment /
 					((PI_16 * (Math.pow(p1, 4) - Math.pow(p2, 4))) / p1) /
@@ -578,7 +480,6 @@ const kreis = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -587,12 +488,6 @@ const kreis = {
 				kraftInY,
 				drehmoment
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					((drehmoment * p6) /
 						(PI_32 *
@@ -788,15 +683,8 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(p1 * p3 - p2 * p4) /
 					(lengthUnitAusgabe * lengthUnitAusgabe)
@@ -816,15 +704,8 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (2 * p1 + 2 * p3) / lengthUnitAusgabe;
 			},
 			formelTex: "\\(U = 2 B + 2 H\\)",
@@ -841,15 +722,8 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					((p1 * p3 - p2 * p4) * p6) / Math.pow(lengthUnitAusgabe, 3)
 				);
@@ -868,16 +742,9 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (p1 * p3 - p2 * p4) * p6 * dichte * 1000;
 			},
 			formelTex: "\\(m = V \\cdot ρ\\)",
@@ -896,15 +763,8 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					Math.sqrt(Math.pow(p1, 2) + Math.pow(p3, 2)) /
 					lengthUnitAusgabe
@@ -924,15 +784,8 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) /
 					(6 * p3) /
@@ -953,15 +806,8 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) /
 					12 /
@@ -982,15 +828,8 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(p3 * Math.pow(p1, 3) - p4 * Math.pow(p2, 3)) /
 					(6 * p1) /
@@ -1011,15 +850,8 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(p3 * Math.pow(p1, 3) - p4 * Math.pow(p2, 3)) /
 					12 /
@@ -1040,7 +872,6 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -1048,12 +879,6 @@ const rechteck = {
 				kraftInZ,
 				kraftInY
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(kraftInY * p6) /
 					((p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) / (6 * p3)) /
@@ -1076,7 +901,6 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -1084,12 +908,6 @@ const rechteck = {
 				kraftInZ,
 				kraftInY
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(kraftInY * Math.pow(p6, 3)) /
 					(3 *
@@ -1113,7 +931,6 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -1121,12 +938,6 @@ const rechteck = {
 				kraftInZ,
 				kraftInY
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					(kraftInZ / (p1 * p3 - p2 * p4)) *
 					Math.pow(lengthUnitAusgabe, 2)
@@ -1148,7 +959,6 @@ const rechteck = {
 				p4,
 				p5,
 				p6,
-				lengthUnitEingabe,
 				lengthUnitAusgabe,
 				dichte,
 				emodul,
@@ -1156,12 +966,6 @@ const rechteck = {
 				kraftInZ,
 				kraftInY
 			) {
-				p1 = p1 * lengthUnitEingabe;
-				p2 = p2 * lengthUnitEingabe;
-				p3 = p3 * lengthUnitEingabe;
-				p4 = p4 * lengthUnitEingabe;
-				p5 = p5 * lengthUnitEingabe;
-				p6 = p6 * lengthUnitEingabe;
 				return (
 					((kraftInZ / (p1 * p3 - p2 * p4)) * p6) /
 					(emodul * 1000000) /
