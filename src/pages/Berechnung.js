@@ -4,7 +4,6 @@ import { UNIT_MM } from "../Constants";
 import React, { useState } from "react";
 import { getLengthUnitFactor } from "../util";
 import { querschnitte } from "../Querschnitte";
-import BasePage from "./BasePage";
 
 export default function Berechnung() {
 	const [currentQuerschnitt, setCurrentQuerschnitt] = useState("Kreis");
@@ -55,66 +54,62 @@ export default function Berechnung() {
 	);
 
 	return (
-		<BasePage>
-			<div className="grid grid-cols-1 gap-4 xl:grid-rows-1 xl:grid-cols-2">
-				<Eingabe
-					p1={p1}
-					setP1={setP1}
-					p2={p2}
-					setP2={setP2}
-					p3={p3}
-					setP3={setP3}
-					p4={p4}
-					setP4={setP4}
-					p5={p5}
-					setP5={setP5}
-					p6={p6}
-					setP6={setP6}
-					werkstoff={werkstoff}
-					setWerkstoff={setWerkstoff}
-					dichte={dichte}
-					setDichte={setDichte}
-					emodul={emodul}
-					setEmodul={setEmodul}
-					gmodul={gmodul}
-					setGmodul={setGmodul}
-					kraftInZ={kraftInZ}
-					setKraftInZ={setKraftInZ}
-					kraftInY={kraftInY}
-					setKraftInY={setKraftInY}
-					drehmoment={drehmoment}
-					setDrehmoment={setDrehmoment}
-					lengthUnitEingabe={lengthUnitEingabe}
-					setLengthUnitEingabe={setLengthUnitEingabe}
-					lengthUnitFactorEingabe={lengthUnitFactorEingabe}
-					currentQuerschnitt={currentQuerschnitt}
-					setCurrentQuerschnitt={setCurrentQuerschnitt}
-					currentQuerschnittObject={currentQuerschnittObject}
-				/>
-				<Ausgabe
-					berechneteGroessenDisplayUnit={
-						berechneteGroessenDisplayUnit
-					}
-					lengthUnitAusgabe={lengthUnitAusgabe}
-					setLengthUnitAusgabe={setLengthUnitAusgabe}
-					currentQuerschnittObject={currentQuerschnittObject}
-					parameters={parameters}
-					werkstoff={werkstoff}
-					dichte={dichte}
-					emodul={emodul}
-					gmodul={gmodul}
-					kraftInZ={kraftInZ}
-					kraftInY={kraftInY}
-					drehmoment={drehmoment}
-					lengthUnitEingabe={lengthUnitEingabe}
-					p1={p1}
-					p2={p2}
-					p3={p3}
-					p4={p4}
-					p5={p5}
-					p6={p6}
-				/>
-			</div>
-		</BasePage>
+		<div className="grid grid-cols-1 gap-4 xl:grid-rows-1 xl:grid-cols-2">
+			<Eingabe
+				p1={p1}
+				setP1={setP1}
+				p2={p2}
+				setP2={setP2}
+				p3={p3}
+				setP3={setP3}
+				p4={p4}
+				setP4={setP4}
+				p5={p5}
+				setP5={setP5}
+				p6={p6}
+				setP6={setP6}
+				werkstoff={werkstoff}
+				setWerkstoff={setWerkstoff}
+				dichte={dichte}
+				setDichte={setDichte}
+				emodul={emodul}
+				setEmodul={setEmodul}
+				gmodul={gmodul}
+				setGmodul={setGmodul}
+				kraftInZ={kraftInZ}
+				setKraftInZ={setKraftInZ}
+				kraftInY={kraftInY}
+				setKraftInY={setKraftInY}
+				drehmoment={drehmoment}
+				setDrehmoment={setDrehmoment}
+				lengthUnitEingabe={lengthUnitEingabe}
+				setLengthUnitEingabe={setLengthUnitEingabe}
+				lengthUnitFactorEingabe={lengthUnitFactorEingabe}
+				currentQuerschnitt={currentQuerschnitt}
+				setCurrentQuerschnitt={setCurrentQuerschnitt}
+				currentQuerschnittObject={currentQuerschnittObject}
+			/>
+			<Ausgabe
+				berechneteGroessenDisplayUnit={berechneteGroessenDisplayUnit}
+				lengthUnitAusgabe={lengthUnitAusgabe}
+				setLengthUnitAusgabe={setLengthUnitAusgabe}
+				currentQuerschnittObject={currentQuerschnittObject}
+				parameters={parameters}
+				werkstoff={werkstoff}
+				dichte={dichte}
+				emodul={emodul}
+				gmodul={gmodul}
+				kraftInZ={kraftInZ}
+				kraftInY={kraftInY}
+				drehmoment={drehmoment}
+				lengthUnitEingabe={lengthUnitEingabe}
+				p1={p1}
+				p2={p2}
+				p3={p3}
+				p4={p4}
+				p5={p5}
+				p6={p6}
+			/>
+		</div>
 	);
 }
