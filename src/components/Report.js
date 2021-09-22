@@ -214,7 +214,10 @@ export function Report({
 							(item, index) => {
 								if (item.skip !== true) {
 									return (
-										<View style={styles.tableRow}>
+										<View
+											style={styles.tableRow}
+											key={index}
+										>
 											<View style={styles.tableCol1}>
 												<Text
 													style={
@@ -242,7 +245,7 @@ export function Report({
 										</View>
 									);
 								}
-								return <View />;
+								return <View key={index} />;
 							}
 						)}
 						<View style={styles.tableRowDivider}>
@@ -401,7 +404,7 @@ export function Report({
 						{currentQuerschnittObject.ausgabe.map((item, index) => {
 							if (item.isComputable) {
 								return (
-									<View style={styles.tableRow}>
+									<View style={styles.tableRow} key={index}>
 										<View style={styles.tableCol1}>
 											<Text
 												style={
@@ -445,7 +448,7 @@ export function Report({
 									</View>
 								);
 							}
-							return <View />;
+							return <View key={index} />;
 						})}
 					</View>
 				</View>

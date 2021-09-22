@@ -96,6 +96,7 @@ export default function Ausgabe({
 					{currentQuerschnittObject.ausgabe.map((item, index) => {
 						return (
 							<Table.Row
+								key={index}
 								grayOut={!item.isComputable}
 								bezeichnung={item.bezeichnung}
 								symbol={item.symbol}

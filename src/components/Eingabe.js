@@ -62,9 +62,11 @@ export default function Eingabe({
 							setP5(0);
 						}}
 					>
-						{querschnitte.map((item) => {
+						{querschnitte.map((item, index) => {
 							return (
-								<option value={item.name}>{item.name}</option>
+								<option value={item.name} key={index}>
+									{item.name}
+								</option>
 							);
 						})}
 					</select>
@@ -116,7 +118,10 @@ export default function Eingabe({
 									(item, index) => {
 										if (item.skip !== true) {
 											return (
-												<tr className="h-10 sm:h-auto">
+												<tr
+													className="h-10 sm:h-auto"
+													key={index}
+												>
 													<td>{item.bezeichnung}</td>
 													<td className="text-center">
 														{item.symbol}
@@ -155,7 +160,7 @@ export default function Eingabe({
 												</tr>
 											);
 										}
-										return <div />;
+										return <tr key={index} />;
 									}
 								)}
 							</tbody>
@@ -187,9 +192,11 @@ export default function Eingabe({
 						}}
 						value={werkstoff}
 					>
-						{werkstoffe.map((item) => {
+						{werkstoffe.map((item, index) => {
 							return (
-								<option value={item.name}>{item.name}</option>
+								<option value={item.name} key={index}>
+									{item.name}
+								</option>
 							);
 						})}
 					</select>

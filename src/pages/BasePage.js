@@ -35,28 +35,28 @@ BasePage.Header = function BasePageHeader() {
 								d="m 42.487241,157.7469 v -10 l -8.660254,-5 v 10 l 8.660254,5"
 								stroke="currentColor"
 								fill="none"
-								stroke-width="0.5"
-								stroke-linecap="butt"
-								stroke-linejoin="round"
-								stroke-miterlimit="4"
+								strokeWidth="0.5"
+								strokeLinecap="butt"
+								strokeLinejoin="round"
+								strokeMiterlimit="4"
 							/>
 							<path
 								d="m 42.487241,147.7469 8.660254,-5 v 10 l -8.660254,5 z"
 								stroke="currentColor"
 								fill="currentColor"
-								stroke-width="0.5"
-								stroke-linecap="butt"
-								stroke-linejoin="round"
-								stroke-miterlimit="4"
+								strokeWidth="0.5"
+								strokeLinecap="butt"
+								strokeLinejoin="round"
+								strokeMiterlimit="4"
 							/>
 							<path
 								d="m 42.487241,147.7469 8.660254,-5 -8.660254,-5 -8.660254,5 z"
 								stroke="currentColor"
 								fill="none"
-								stroke-width="0.5"
-								stroke-linecap="butt"
-								stroke-linejoin="round"
-								stroke-miterlimit="4"
+								strokeWidth="0.5"
+								strokeLinecap="butt"
+								strokeLinejoin="round"
+								strokeMiterlimit="4"
 							/>
 						</g>
 					</svg>
