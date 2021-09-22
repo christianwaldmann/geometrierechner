@@ -62,7 +62,7 @@ const kreis = {
 				setP6
 			) {
 				const newValue = parseFloat(e.target.value);
-				if (e.target.value > p1) {
+				if (newValue > p1) {
 					// alert("d > D nicht erlaubt");
 					return;
 				}
@@ -100,7 +100,7 @@ const kreis = {
 				setP6
 			) {
 				const newValue = parseFloat(e.target.value);
-				if (e.target.value * 2 > p1) {
+				if (newValue * 2 > p1) {
 					// alert("2 * s > D nicht erlaubt");
 					return;
 				}
@@ -743,12 +743,15 @@ const rechteck = {
 				setP5,
 				setP6
 			) {
-				// TODO: hier weitermachen: if-abfrage + b u. h setzen; evtl. ausgrauen falls b u. h verschieden
 				const newValue = parseFloat(e.target.value);
-				if (p2 + 2 * newValue > p1 || p4 + 2 * newValue > p3) {
+				if (2 * newValue > p1 || 2 * newValue > p3) {
 					return;
 				}
 				onParameterChange(e, setP5);
+				if (e.target.checkValidity()) {
+					setP2(p1 - newValue * 2);
+					setP4(p3 - newValue * 2);
+				}
 			},
 		},
 		{
