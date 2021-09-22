@@ -26,59 +26,6 @@ export default function Ausgabe({
 }) {
 	const [nachkommastellen, setNachkommastellen] = useState(2);
 
-	function isComputable(requiredParams) {
-		for (var i = 0; i < requiredParams.length; i++) {
-			switch (requiredParams[i]) {
-				case "p1":
-					if (p1 === 0) return false;
-					break;
-				case "p2":
-					if (p2 === 0) return false;
-					break;
-				case "p3":
-					if (p3 === 0) return false;
-					break;
-				case "p4":
-					if (p4 === 0) return false;
-					break;
-				case "p5":
-					if (p5 === 0) return false;
-					break;
-				case "p6":
-					if (p6 === 0) return false;
-					break;
-				case "dichte":
-					if (dichte === 0) return false;
-					break;
-				case "emodul":
-					if (emodul === 0) return false;
-					break;
-				case "gmodul":
-					if (gmodul === 0) return false;
-					break;
-				case "kraftInZ":
-					if (kraftInZ === 0) return false;
-					break;
-				case "kraftInY":
-					if (kraftInY === 0) return false;
-					break;
-				case "drehmoment":
-					if (drehmoment === 0) return false;
-					break;
-				default:
-					console.error("Not recognized required parameter");
-			}
-		}
-		return true;
-	}
-
-	currentQuerschnittObject.ausgabe = currentQuerschnittObject.ausgabe.map(
-		(item) => {
-			item.isComputable = isComputable(item.requires);
-			return item;
-		}
-	);
-
 	return (
 		<div className="flex flex-col w-full p-0 mt-24 bg-white border-b-0 sm:border sm:rounded-lg sm:mt-4">
 			<div className="w-full px-6 pb-8 overflow-auto sm:pb-12 sm:px-10 ">

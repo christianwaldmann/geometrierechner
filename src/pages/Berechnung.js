@@ -40,23 +40,81 @@ export default function Berechnung() {
 	const p5SI = p5 * lengthUnitFactorEingabe;
 	const p6SI = p6 * lengthUnitFactorEingabe;
 
+	function isComputable(requiredParams) {
+		for (var i = 0; i < requiredParams.length; i++) {
+			switch (requiredParams[i]) {
+				case "p1":
+					if (p1 === 0) return false;
+					break;
+				case "p2":
+					if (p2 === 0) return false;
+					break;
+				case "p3":
+					if (p3 === 0) return false;
+					break;
+				case "p4":
+					if (p4 === 0) return false;
+					break;
+				case "p5":
+					if (p5 === 0) return false;
+					break;
+				case "p6":
+					if (p6 === 0) return false;
+					break;
+				case "dichte":
+					if (dichte === 0) return false;
+					break;
+				case "emodul":
+					if (emodul === 0) return false;
+					break;
+				case "gmodul":
+					if (gmodul === 0) return false;
+					break;
+				case "kraftInZ":
+					if (kraftInZ === 0) return false;
+					break;
+				case "kraftInY":
+					if (kraftInY === 0) return false;
+					break;
+				case "drehmoment":
+					if (drehmoment === 0) return false;
+					break;
+				default:
+					console.error("Not recognized required parameter");
+			}
+		}
+		return true;
+	}
+
+	currentQuerschnittObject.ausgabe = currentQuerschnittObject.ausgabe.map(
+		(item) => {
+			item.isComputable = isComputable(item.requires);
+			return item;
+		}
+	);
+
 	const berechneteGroessenDisplayUnit = currentQuerschnittObject.ausgabe.map(
-		(item, index) =>
-			item.formel(
-				p1SI,
-				p2SI,
-				p3SI,
-				p4SI,
-				p5SI,
-				p6SI,
-				lengthUnitFactorAusgabe,
-				dichte,
-				emodul,
-				gmodul,
-				kraftInZ,
-				kraftInY,
-				drehmoment
-			)
+		(item, index) => {
+			if (item.isComputable) {
+				return item.formel(
+					p1SI,
+					p2SI,
+					p3SI,
+					p4SI,
+					p5SI,
+					p6SI,
+					lengthUnitFactorAusgabe,
+					dichte,
+					emodul,
+					gmodul,
+					kraftInZ,
+					kraftInY,
+					drehmoment
+				);
+			} else {
+				return -1;
+			}
+		}
 	);
 
 	return (
