@@ -144,7 +144,7 @@ BasePage.Header = function BasePageHeader() {
 					</li>
 					<li className="mx-4 border-t">
 						<a
-							href="https://github.com/christianwaldmann/portfolio"
+							href="https://github.com/christianwaldmann/geometrierechner"
 							className="flex items-center justify-between w-full py-2 text-base font-semibold text-black hover:text-gray-600"
 						>
 							<span>Quellcode</span>
