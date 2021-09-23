@@ -2,12 +2,6 @@ import { UNIT_MM, UNIT_CM, UNIT_DM, UNIT_M } from "../Constants";
 import { querschnitte } from "../Querschnitte";
 import { werkstoffe } from "../Werkstoffe";
 
-function onChange(event, updateFn) {
-	if (event.target.checkValidity()) {
-		updateFn(parseFloat(event.target.value));
-	}
-}
-
 export default function Eingabe({
 	p1,
 	setP1,
@@ -43,6 +37,87 @@ export default function Eingabe({
 	currentQuerschnittObject,
 }) {
 	const parameters = [p1, p2, p3, p4, p5, p6];
+
+	const onChangeQuerschnitt = (e) => {
+		setCurrentQuerschnitt(e.target.value);
+		setP1(0);
+		setP2(0);
+		setP3(0);
+		setP4(0);
+		setP5(0);
+	};
+
+	const onChangeLengthUnitEingabe = (e) => {
+		setLengthUnitEingabe(e.target.value);
+	};
+
+	const onChangeInput = (item) => (e) => {
+		item.onChange(
+			e,
+			p1,
+			p2,
+			p3,
+			p4,
+			p5,
+			p6,
+			setP1,
+			setP2,
+			setP3,
+			setP4,
+			setP5,
+			setP6
+		);
+	};
+
+	const onChangeWerkstoff = (e) => {
+		const selectedWerkstoff = werkstoffe.find((el) => {
+			return el.name === e.target.value;
+		});
+		setWerkstoff(e.target.value);
+		setDichte(selectedWerkstoff.dichte);
+		setEmodul(selectedWerkstoff.emodul);
+		setGmodul(selectedWerkstoff.gmodul);
+	};
+
+	const onChangeDichte = (e) => {
+		if (e.target.checkValidity()) {
+			setWerkstoff("Benutzerdefiniert");
+			setDichte(parseFloat(e.target.value));
+		}
+	};
+
+	const onChangeEmodul = (e) => {
+		if (e.target.checkValidity()) {
+			setWerkstoff("Benutzerdefiniert");
+			setEmodul(parseFloat(e.target.value));
+		}
+	};
+
+	const onChangeGmodul = (e) => {
+		if (e.target.checkValidity()) {
+			setWerkstoff("Benutzerdefiniert");
+			setGmodul(parseFloat(e.target.value));
+		}
+	};
+
+	const onChangeKraftInZ = (e) => {
+		if (e.target.checkValidity()) {
+			setKraftInZ(parseFloat(e.target.value));
+		}
+	};
+
+	const onChangeKraftInY = (e) => {
+		if (e.target.checkValidity()) {
+			setKraftInY(parseFloat(e.target.value));
+		}
+	};
+
+	const onChangeDrehmoment = (e) => {
+		if (e.target.checkValidity()) {
+			setDrehmoment(parseFloat(e.target.value));
+		}
+	};
+
 	return (
 		<div className="w-full p-0 mt-4 bg-white border-b-0 sm:border sm:rounded-lg">
 			<div className="px-6 pb-8 sm:pb-12 sm:px-10">
@@ -53,14 +128,7 @@ export default function Eingabe({
 					<label className="inline-block w-1/2">Querschnitt</label>
 					<select
 						className="w-1/2 px-1 py-2 my-1 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none"
-						onChange={(e) => {
-							setCurrentQuerschnitt(e.target.value);
-							setP1(0);
-							setP2(0);
-							setP3(0);
-							setP4(0);
-							setP5(0);
-						}}
+						onChange={onChangeQuerschnitt}
 					>
 						{querschnitte.map((item, index) => {
 							return (
@@ -91,11 +159,7 @@ export default function Eingabe({
 										Einheit
 										<select
 											className="px-1 py-2 my-1 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 sm:ml-2 focus:outline-none"
-											onChange={(e) =>
-												setLengthUnitEingabe(
-													e.target.value
-												)
-											}
+											onChange={onChangeLengthUnitEingabe}
 										>
 											<option value={UNIT_MM}>
 												{UNIT_MM}
@@ -137,23 +201,9 @@ export default function Eingabe({
 																	index
 																]
 															}
-															onChange={(e) => {
-																item.onChange(
-																	e,
-																	p1,
-																	p2,
-																	p3,
-																	p4,
-																	p5,
-																	p6,
-																	setP1,
-																	setP2,
-																	setP3,
-																	setP4,
-																	setP5,
-																	setP6
-																);
-															}}
+															onChange={onChangeInput(
+																item
+															)}
 														/>
 													</td>
 													<td>{lengthUnitEingabe}</td>
@@ -181,15 +231,7 @@ export default function Eingabe({
 					<label className="inline-block w-1/2">Werkstoff</label>
 					<select
 						className="w-1/2 px-1 py-2 my-1 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none"
-						onChange={(e) => {
-							const selectedWerkstoff = werkstoffe.find((el) => {
-								return el.name === e.target.value;
-							});
-							setWerkstoff(e.target.value);
-							setDichte(selectedWerkstoff.dichte);
-							setEmodul(selectedWerkstoff.emodul);
-							setGmodul(selectedWerkstoff.gmodul);
-						}}
+						onChange={onChangeWerkstoff}
 						value={werkstoff}
 					>
 						{werkstoffe.map((item, index) => {
@@ -227,14 +269,7 @@ export default function Eingabe({
 										step="any"
 										className="w-24 text-right sm:w-auto"
 										value={dichte}
-										onChange={(e) => {
-											if (e.target.checkValidity()) {
-												setWerkstoff(
-													"Benutzerdefiniert"
-												);
-											}
-											onChange(e, setDichte);
-										}}
+										onChange={onChangeDichte}
 									/>
 								</td>
 								<td>kg/dm³</td>
@@ -248,14 +283,7 @@ export default function Eingabe({
 										step="any"
 										className="w-24 text-right sm:w-auto"
 										value={emodul}
-										onChange={(e) => {
-											if (e.target.checkValidity()) {
-												setWerkstoff(
-													"Benutzerdefiniert"
-												);
-											}
-											onChange(e, setEmodul);
-										}}
+										onChange={onChangeEmodul}
 									/>
 								</td>
 								<td>N/mm²</td>
@@ -269,14 +297,7 @@ export default function Eingabe({
 										step="any"
 										className="w-24 text-right sm:w-auto"
 										value={gmodul}
-										onChange={(e) => {
-											if (e.target.checkValidity()) {
-												setWerkstoff(
-													"Benutzerdefiniert"
-												);
-											}
-											onChange(e, setGmodul);
-										}}
+										onChange={onChangeGmodul}
 									/>
 								</td>
 								<td>N/mm²</td>
@@ -313,9 +334,7 @@ export default function Eingabe({
 										step="any"
 										className="w-24 text-right sm:w-auto"
 										value={kraftInZ}
-										onChange={(e) =>
-											onChange(e, setKraftInZ)
-										}
+										onChange={onChangeKraftInZ}
 									/>
 								</td>
 								<td>N</td>
@@ -329,9 +348,7 @@ export default function Eingabe({
 										step="any"
 										className="w-24 text-right sm:w-auto"
 										value={kraftInY}
-										onChange={(e) =>
-											onChange(e, setKraftInY)
-										}
+										onChange={onChangeKraftInY}
 									/>
 								</td>
 								<td>N</td>
@@ -345,9 +362,7 @@ export default function Eingabe({
 										step="any"
 										className="w-24 text-right sm:w-auto"
 										value={drehmoment}
-										onChange={(e) =>
-											onChange(e, setDrehmoment)
-										}
+										onChange={onChangeDrehmoment}
 									/>
 								</td>
 								<td>Nm</td>
