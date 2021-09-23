@@ -129,4 +129,4 @@ function Material({
 	);
 }
 
-export default Material = React.memo(Material);
+export const MaterialMemoized = React.memo(Material);

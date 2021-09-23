@@ -156,4 +156,4 @@ function Geometrie({
 	);
 }
 
-export default Geometrie = React.memo(Geometrie);
+export const GeometrieMemoized = React.memo(Geometrie);

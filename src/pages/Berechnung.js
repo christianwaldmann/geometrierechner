@@ -1,12 +1,11 @@
-import Eingabe from "../components/Eingabe";
 import Ausgabe from "../components/Ausgabe";
 import { UNIT_MM } from "../Constants";
 import React, { useState } from "react";
 import { getLengthUnitFactor } from "../util";
 import { querschnitte } from "../Querschnitte";
-import Geometrie from "../components/Geometrie";
-import Material from "../components/Material";
-import Belastung from "../components/Belastung";
+import { GeometrieMemoized } from "../components/Geometrie";
+import { MaterialMemoized } from "../components/Material";
+import { BelastungMemoized } from "../components/Belastung";
 
 export default function Berechnung() {
 	const [currentQuerschnitt, setCurrentQuerschnitt] = useState("Kreis");
@@ -124,7 +123,7 @@ export default function Berechnung() {
 		<div className="grid grid-cols-1 gap-4 xl:grid-rows-1 xl:grid-cols-2">
 			<div className="w-full p-0 mt-4 bg-white border-b-0 sm:border sm:rounded-lg">
 				<div className="px-6 pb-8 sm:pb-12 sm:px-10">
-					<Geometrie
+					<GeometrieMemoized
 						p1={p1}
 						setP1={setP1}
 						p2={p2}
@@ -142,7 +141,7 @@ export default function Berechnung() {
 						currentQuerschnittObject={currentQuerschnittObject}
 						setCurrentQuerschnitt={setCurrentQuerschnitt}
 					/>
-					<Material
+					<MaterialMemoized
 						werkstoff={werkstoff}
 						setWerkstoff={setWerkstoff}
 						dichte={dichte}
@@ -152,7 +151,7 @@ export default function Berechnung() {
 						gmodul={gmodul}
 						setGmodul={setGmodul}
 					/>
-					<Belastung
+					<BelastungMemoized
 						kraftInZ={kraftInZ}
 						setKraftInZ={setKraftInZ}
 						kraftInY={kraftInY}

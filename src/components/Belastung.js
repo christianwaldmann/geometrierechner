@@ -104,4 +104,4 @@ function Belastung({
 	);
 }
 
-export default Belastung = React.memo(Belastung);
+export const BelastungMemoized = React.memo(Belastung);
