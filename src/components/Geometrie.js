@@ -112,30 +112,40 @@ function Geometrie({
 								(item, index) => {
 									if (item.skip !== true) {
 										return (
-											<tr
-												className="h-10 sm:h-auto"
-												key={index}
-											>
-												<td>{item.bezeichnung}</td>
-												<td className="text-center">
-													{item.symbol}
-												</td>
-												<td>
-													<input
-														type="number"
-														min="0"
-														step="any"
-														className="w-24 text-right sm:w-auto"
-														value={
-															parameters[index]
-														}
-														onChange={onChangeInput(
-															item
-														)}
-													/>
-												</td>
-												<td>{lengthUnitEingabe}</td>
-											</tr>
+											// <tr
+											// 	className="h-10 sm:h-auto"
+											// 	key={index}
+											// >
+											// 	<td>{item.bezeichnung}</td>
+											// 	<td className="text-center">
+											// 		{item.symbol}
+											// 	</td>
+											// 	<td>
+											// 		<input
+											// 			type="number"
+											// 			min="0"
+											// 			step="any"
+											// 			className="w-24 text-right sm:w-auto"
+											// 			value={
+											// 				parameters[index]
+											// 			}
+											// 			onChange={onChangeInput(
+											// 				item
+											// 			)}
+											// 		/>
+											// 	</td>
+											// 	<td>{lengthUnitEingabe}</td>
+											// </tr>
+											<Geometrie.Row
+												index={index}
+												bezeichnung={item.bezeichnung}
+												symbol={item.symbol}
+												value={parameters[index]}
+												onChange={onChangeInput(item)}
+												lengthUnitEingabe={
+													lengthUnitEingabe
+												}
+											/>
 										);
 									}
 									return <tr key={index} />;
@@ -155,5 +165,32 @@ function Geometrie({
 		</>
 	);
 }
+
+Geometrie.Row = function GeometrieRow({
+	index,
+	bezeichnung,
+	symbol,
+	value,
+	onChange,
+	lengthUnitEingabe,
+}) {
+	return (
+		<tr className="h-10 sm:h-auto" key={index}>
+			<td>{bezeichnung}</td>
+			<td className="text-center">{symbol}</td>
+			<td>
+				<input
+					type="number"
+					min="0"
+					step="any"
+					className="w-24 text-right sm:w-auto"
+					value={value}
+					onChange={onChange}
+				/>
+			</td>
+			<td>{lengthUnitEingabe}</td>
+		</tr>
+	);
+};
 
 export const GeometrieMemoized = React.memo(Geometrie);
