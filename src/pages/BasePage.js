@@ -16,6 +16,11 @@ BasePage.Header = function BasePageHeader() {
 
 	return (
 		<nav className="w-full bg-white">
+			{process.env.REACT_APP_DEPLOYMENT_ENV === "stage" && (
+				<div className="text-xs font-bold text-center text-white bg-blue-500">
+					Staging Environment
+				</div>
+			)}
 			<div className="container flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0">
 				<Link
 					className="flex items-center pl-4 text-2xl font-bold text-black no-underline toggleColour hover:no-underline sm:pl-10 hover:text-gray-600"

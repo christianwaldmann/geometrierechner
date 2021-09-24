@@ -12,6 +12,9 @@ export default function App() {
 			<MathJaxContext>
 				<Helmet>
 					<body className="bg-white sm:bg-gray-50" />
+					{process.env.REACT_APP_DEPLOYMENT_ENV === "stage" && (
+						<meta name="robots" content="noindex" />
+					)}
 				</Helmet>
 				<Router basename={process.env.PUBLIC_URL}>
 					<Switch>
