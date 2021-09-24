@@ -18,7 +18,13 @@ BasePage.Header = function BasePageHeader() {
 		<nav className="w-full bg-white">
 			{process.env.REACT_APP_DEPLOYMENT_ENV === "stage" && (
 				<div className="text-xs font-bold text-center text-white bg-blue-500">
-					Staging Environment
+					<a
+						className="text-xs font-bold text-center text-white bg-blue-500"
+						href="https://www.geometrierechner.de"
+					>
+						This is a development version of the site. Click here to
+						see the live content.
+					</a>
 				</div>
 			)}
 			<div className="container flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0">
