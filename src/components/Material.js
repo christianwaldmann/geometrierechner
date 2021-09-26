@@ -86,6 +86,7 @@ function Material({
 							<td>
 								<input
 									type="number"
+									min="0"
 									step="any"
 									className="w-24 text-right sm:w-auto"
 									value={dichte}
@@ -100,6 +101,7 @@ function Material({
 							<td>
 								<input
 									type="number"
+									min="0"
 									step="any"
 									className="w-24 text-right sm:w-auto"
 									value={emodul}
@@ -114,6 +116,7 @@ function Material({
 							<td>
 								<input
 									type="number"
+									min="0"
 									step="any"
 									className="w-24 text-right sm:w-auto"
 									value={gmodul}
