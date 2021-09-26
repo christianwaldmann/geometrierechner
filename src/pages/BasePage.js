@@ -185,7 +185,7 @@ BasePage.Header = function BasePageHeader() {
 
 BasePage.Footer = function BasePageFooter() {
 	return (
-		<footer className="py-2 mt-12 text-gray-700">
+		<footer className="py-2 mt-12 text-sm text-gray-700">
 			2021 Christian Waldmann
 		</footer>
 	);
