@@ -90,11 +90,11 @@ Table.Row = function TableRow({
 				}}
 			></td>
 			<td className="text-center">{symbol}</td>
-			<td className="">
+			<td>
 				<input
 					type="number"
 					disabled={disableInput}
-					className="w-24 text-right sm:w-auto"
+					className="w-24 text-right bg-transparent sm:w-auto"
 					value={value}
 					onChange={onValueChange}
 				/>
