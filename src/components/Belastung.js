@@ -32,7 +32,7 @@ function Belastung({
 				Belastung
 			</h2>
 			<div className="flex flex-col-reverse items-center w-full mt-6 sm:items-start sm:flex-row">
-				<table className="flex-grow table-fixed">
+				<table className="flex-grow mt-8 table-fixed sm:mt-0">
 					<thead>
 						<tr className="border-b border-gray-800">
 							<th className="w-5/12 sm:px-1">Bezeichnung</th>

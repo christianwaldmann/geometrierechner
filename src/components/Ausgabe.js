@@ -29,7 +29,7 @@ export default function Ausgabe({
 	return (
 		<div className="flex flex-col w-full p-0 mt-24 bg-white border-b-0 sm:border sm:rounded-lg sm:mt-4">
 			<div className="w-full px-6 pb-8 overflow-auto sm:pb-12 sm:px-10 ">
-				<h2 className="mt-12 mb-12 text-3xl font-semibold text-center sm:text-left sm:mt-8 sm:mb-6">
+				<h2 className="mt-12 mb-16 text-3xl font-semibold text-center sm:text-left sm:mt-8 sm:mb-6">
 					Berechnete Werte
 				</h2>
 				<Table
