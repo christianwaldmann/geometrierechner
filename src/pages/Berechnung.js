@@ -121,8 +121,8 @@ export default function Berechnung() {
 
 	return (
 		<div className="grid grid-cols-1 gap-4 xl:grid-rows-1 xl:grid-cols-2">
-			<div className="w-full p-0 bg-white border-b-0 sm:border sm:rounded-lg sm:mt-4">
-				<div className="px-6 pb-8 sm:pb-12 sm:px-10">
+			<div className="relative w-full p-0 bg-white border-b-0 sm:border sm:rounded-lg sm:mt-4">
+				<div className="px-6 pb-8 -mt-8 sm:mt-0 sm:pb-12 sm:px-10">
 					<GeometrieMemoized
 						p1={p1}
 						setP1={setP1}
@@ -160,7 +160,7 @@ export default function Berechnung() {
 						setDrehmoment={setDrehmoment}
 					/>
 				</div>
-				<h2 className="hidden py-0 text-xs font-bold text-center text-indigo-700 bg-gray-200 rounded-b sm:block">
+				<h2 className="absolute bottom-0 left-0 hidden w-full py-0 text-xs font-bold text-center text-indigo-700 bg-gray-200 rounded-b sm:block">
 					EINGABE
 				</h2>
 			</div>

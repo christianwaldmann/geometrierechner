@@ -19,12 +19,12 @@ export default function App() {
 				<Router basename={process.env.PUBLIC_URL}>
 					<Switch>
 						<Route exact path={["", "/"]}>
-							<BasePage>
+							<BasePage active="Berechnung">
 								<Berechnung />
 							</BasePage>
 						</Route>
 						<Route exact path="/formeln">
-							<BasePage>
+							<BasePage active="Formeln">
 								<Formeln />
 							</BasePage>
 						</Route>

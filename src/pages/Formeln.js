@@ -8,17 +8,20 @@ export default function Formeln() {
 				Formeln
 			</h1>
 			<div className="w-full overflow-auto bg-white rounded-lg sm:grid sm:grid-cols-3 gap-y-36">
-				{querschnitte.map((querschnitt) => {
+				{querschnitte.map((querschnitt, index) => {
 					return (
-						<>
+						<div key={index}>
 							<h2 className="mt-16 mb-4 text-2xl font-semibold sm:mt-0">
 								{querschnitt.name}
 							</h2>
 							<table className="w-full sm:col-end-4 sm:col-start-2">
 								<tbody>
-									{querschnitt.ausgabe.map((item) => {
+									{querschnitt.ausgabe.map((item, index) => {
 										return (
-											<tr className="h-12 border-b">
+											<tr
+												className="h-12 border-b"
+												key={index}
+											>
 												<td
 													className="w-40 sm:w-auto sm:px-4"
 													dangerouslySetInnerHTML={{
@@ -35,7 +38,7 @@ export default function Formeln() {
 									})}
 								</tbody>
 							</table>
-						</>
+						</div>
 					);
 				})}
 			</div>

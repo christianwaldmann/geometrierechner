@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function BasePage({ children, ...restProps }) {
+export default function BasePage({ active, children, ...restProps }) {
 	return (
 		<div className="flex flex-col items-center text-sm sm:text-base">
-			<BasePage.Header />
+			<BasePage.Header active={active} />
 			<div className="container mx-auto">{children}</div>
 			<BasePage.Footer />
 		</div>
 	);
 }
 
-BasePage.Header = function BasePageHeader() {
+BasePage.Header = function BasePageHeader({ active }) {
 	const [showDropdown, setShowDropdown] = useState(false);
 
 	return (
@@ -29,7 +29,7 @@ BasePage.Header = function BasePageHeader() {
 			)}
 			<div className="container flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0">
 				<Link
-					className="flex items-center ml-4 text-2xl font-bold text-black no-underline toggleColour hover:no-underline sm:ml-10 hover:text-gray-600"
+					className="flex items-center ml-4 text-2xl font-bold text-gray-900 no-underline toggleColour hover:no-underline sm:ml-10 hover:text-gray-600"
 					to="/"
 				>
 					<svg
@@ -89,11 +89,13 @@ BasePage.Header = function BasePageHeader() {
 					</button>
 				</div>
 				<div className="z-20 flex-grow hidden w-full p-4 mt-2 mr-4 text-black bg-white lg:flex lg:items-center lg:w-auto lg:mt-0 lg:bg-transparent lg:p-0">
-					<ul className="items-center justify-end flex-1 list-reset lg:flex">
+					<ul className="items-center justify-end flex-1 text-gray-400 list-reset lg:flex">
 						<li className="mr-3">
 							<Link
 								to="/"
-								className="inline-block px-4 py-2 font-semibold text-black hover:text-gray-600"
+								className={`inline-block px-4 py-2 font-bold hover:text-indigo-600 ${
+									active === "Berechnung" && "text-indigo-600"
+								}`}
 							>
 								Berechnung
 							</Link>
@@ -101,7 +103,9 @@ BasePage.Header = function BasePageHeader() {
 						<li className="mr-3">
 							<Link
 								to="/formeln"
-								className="inline-block px-4 py-2 font-semibold text-black hover:text-gray-600"
+								className={`inline-block px-4 py-2 font-bold hover:text-indigo-600 ${
+									active === "Formeln" && "text-indigo-600"
+								}`}
 							>
 								Formeln
 							</Link>
@@ -109,7 +113,7 @@ BasePage.Header = function BasePageHeader() {
 						<li className="mr-3">
 							<a
 								href="https://github.com/christianwaldmann/geometrierechner"
-								className="flex items-center px-4 py-2 font-semibold text-black hover:text-gray-600"
+								className="flex items-center px-4 py-2 font-bold hover:text-indigo-500"
 							>
 								<span>Quellcode</span>
 								<svg

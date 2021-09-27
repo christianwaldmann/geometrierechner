@@ -29,16 +29,16 @@ export default function Ausgabe({
 	const [nachkommastellen, setNachkommastellen] = useState(2);
 
 	return (
-		<div className="flex flex-col w-full p-0 mt-20 bg-white border-b-0 sm:border sm:rounded-lg sm:mt-4">
+		<div className="relative flex flex-col w-full p-0 mt-20 bg-white border-b-0 sm:border sm:rounded-lg sm:mt-4">
 			<div className="w-full px-6 overflow-auto sm:px-10">
 				<SectionHeader>Berechnete Eigenschaften</SectionHeader>
 				<div className="mt-4" />
 				<div className="flex items-center justify-end w-full">
-					<label className="text-sm text-gray-500">
+					<label className="w-1/2 text-sm text-gray-500 sm:w-auto">
 						Nachkommastellen
 					</label>
 					<DropdownSelection
-						className="w-20 ml-2"
+						className="w-1/2 ml-2 sm:w-20"
 						onChange={(e) => setNachkommastellen(e.target.value)}
 						value={nachkommastellen}
 					>
@@ -51,11 +51,11 @@ export default function Ausgabe({
 					</DropdownSelection>
 				</div>
 				<div className="flex items-center justify-end w-full">
-					<label className="text-sm text-gray-500">
+					<label className="w-1/2 text-sm text-gray-500 sm:w-auto">
 						Längeneinheit
 					</label>
 					<DropdownSelection
-						className="w-20 ml-2"
+						className="w-1/2 ml-2 sm:w-20"
 						onChange={(e) => setLengthUnitAusgabe(e.target.value)}
 					>
 						<DropdownSelection.Option value={UNIT_MM} />
@@ -64,7 +64,7 @@ export default function Ausgabe({
 						<DropdownSelection.Option value={UNIT_M} />
 					</DropdownSelection>
 				</div>
-				<div className="mt-3 text-base divide-y-2 divide-gray-100">
+				<div className="mt-8 text-base divide-y-2 divide-gray-100">
 					{currentQuerschnittObject.ausgabe.map((item, index) => {
 						return (
 							<Ausgabe.Row
@@ -98,7 +98,7 @@ export default function Ausgabe({
 				</div>
 			</div>
 			<div className="flex-grow" />
-			<div className="pt-20 pb-12 mx-auto sm:pt-0">
+			<div className="pt-20 pb-12 mx-auto sm:pt-10">
 				<ReportButton
 					parameters={parameters}
 					kraftInZ={kraftInZ}
@@ -117,7 +117,7 @@ export default function Ausgabe({
 					currentQuerschnittObject={currentQuerschnittObject}
 				/>
 			</div>
-			<h2 className="hidden py-0 text-xs font-bold text-center text-indigo-700 bg-gray-200 rounded-b sm:block">
+			<h2 className="absolute bottom-0 left-0 hidden w-full py-0 text-xs font-bold text-center text-indigo-700 bg-gray-200 rounded-b sm:block">
 				AUSGABE
 			</h2>
 		</div>

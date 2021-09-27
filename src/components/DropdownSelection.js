@@ -19,7 +19,7 @@ export default function DropdownSelection({
 			>
 				{children}
 			</select>
-			<div className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-500 pointer-events-none">
+			<div className="absolute inset-y-0 right-0 flex items-center pr-2 text-gray-500 bg-gray-100 pointer-events-none">
 				<svg
 					className="w-4 h-4"
 					fill="none"
