@@ -28,10 +28,84 @@ function Belastung({
 
 	return (
 		<>
-			<h2 className="mt-24 mb-12 text-3xl font-semibold text-center sm:mt-16 sm:text-left sm:mb-2">
+			<h2 className="pt-4 mt-24 mb-12 text-sm font-semibold text-gray-600 border-t sm:mt-8 sm:mb-2">
 				Belastung
 			</h2>
-			<div className="flex flex-col-reverse items-center w-full mt-6 sm:items-start sm:flex-row">
+			<div className="flex mt-4">
+				<label className="w-1/2">Lastfall</label>
+				<div className="w-1/2">
+					<div className="flex">
+						<div className="object-contain w-32 h-32">
+							<img
+								src="/assets/Belastung.svg"
+								className=""
+								alt="Querschnitt Skizze"
+							/>
+						</div>
+						<select
+							className="w-1/2 h-8 px-1 py-2 my-1 ml-auto text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none"
+							// onChange={onChangeQuerschnitt}
+						>
+							<option value="Balken einseitig">
+								Balken einseitig
+							</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div className="-mt-8">
+				<div className="flex my-1">
+					<div className="flex items-center w-1/2">
+						Kraft in z-Achse
+						<div className="ml-2 font-bold">(Fz)</div>
+					</div>
+					<div className="flex w-1/2 px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none">
+						<input
+							type="number"
+							min="0"
+							step="any"
+							className="flex-grow w-24 text-right bg-transparent"
+							value={kraftInZ}
+							onChange={onChangeKraftInZ}
+						/>
+						N
+					</div>
+				</div>
+				<div className="flex my-1">
+					<div className="flex items-center w-1/2">
+						E-Kraft in y-Achse{" "}
+						<div className="ml-2 font-bold">(Fy)</div>
+					</div>
+					<div className="flex w-1/2 px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none">
+						<input
+							type="number"
+							min="0"
+							step="any"
+							className="flex-grow w-24 text-right bg-transparent"
+							value={kraftInY}
+							onChange={onchange}
+						/>
+						N
+					</div>
+				</div>
+				<div className="flex my-1">
+					<div className="flex items-center w-1/2">
+						Drehmoment <div className="ml-2 font-bold">(Mz)</div>
+					</div>
+					<div className="flex w-1/2 px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none">
+						<input
+							type="number"
+							min="0"
+							step="any"
+							className="flex-grow w-24 text-right bg-transparent"
+							value={drehmoment}
+							onChange={onChangeDrehmoment}
+						/>
+						Nm
+					</div>
+				</div>
+			</div>
+			{/* <div className="flex flex-col-reverse items-center w-full mt-6 sm:items-start sm:flex-row">
 				<table className="flex-grow mt-8 table-fixed sm:mt-0">
 					<thead>
 						<tr className="border-b border-gray-800">
@@ -99,7 +173,7 @@ function Belastung({
 						alt="Belastung Skizze"
 					/>
 				</div>
-			</div>
+			</div> */}
 		</>
 	);
 }

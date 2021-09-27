@@ -54,30 +54,80 @@ function Geometrie({
 	const parameters = [p1, p2, p3, p4, p5, p6];
 
 	return (
-		<>
-			<h2 className="mt-8 mb-12 text-3xl font-semibold text-center sm:text-left sm:mb-2">
+		<div className="h-94">
+			<h2 className="pt-4 mt-24 mb-12 text-sm font-semibold text-gray-600 sm:mt-8 sm:mb-2">
 				Geometrie
 			</h2>
-			<div className="mt-4">
-				<label className="inline-block w-1/2">Querschnitt</label>
+			<div className="flex mt-4">
+				<label className="w-1/2">Querschnitt</label>
+				<div className="w-1/2">
+					<div className="flex">
+						<div className="object-contain w-32 h-32">
+							<img
+								src={currentQuerschnittObject.svg_src}
+								className=""
+								alt="Querschnitt Skizze"
+							/>
+						</div>
+						<select
+							className="w-1/2 h-8 px-1 py-2 my-1 ml-auto text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none"
+							onChange={onChangeQuerschnitt}
+						>
+							{querschnitte.map((item, index) => {
+								return (
+									<option value={item.name} key={index}>
+										{item.name}
+									</option>
+								);
+							})}
+						</select>
+					</div>
+				</div>
+			</div>
+			<div className="flex flex-col items-end w-full mb-6 -mt-12">
 				<select
-					className="w-1/2 px-1 py-2 my-1 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none"
-					onChange={onChangeQuerschnitt}
+					className="px-1 py-2 my-1 ml-auto text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 sm:ml-2 focus:outline-none"
+					onChange={onChangeLengthUnitEingabe}
 				>
-					{querschnitte.map((item, index) => {
-						return (
-							<option value={item.name} key={index}>
-								{item.name}
-							</option>
-						);
-					})}
+					<option value={UNIT_MM}>{UNIT_MM}</option>
+					<option value={UNIT_CM}>{UNIT_CM}</option>
+					<option value={UNIT_DM}>{UNIT_DM}</option>
+					<option value={UNIT_M}>{UNIT_M}</option>
 				</select>
 			</div>
-			<div className="flex flex-col-reverse items-center w-full mt-4 sm:items-start sm:flex-row">
+			<div className="-mt-4">
+				{currentQuerschnittObject.parameters.map((item, index) => {
+					if (item.skip !== true) {
+						return (
+							<div className="flex my-1">
+								<div className="flex items-center w-1/2">
+									{item.bezeichnung}
+									<div className="ml-2 font-bold">
+										({item.symbol})
+									</div>
+								</div>
+								<div className="flex w-1/2 px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none">
+									<input
+										type="number"
+										min="0"
+										step="any"
+										className="flex-grow w-24 text-right bg-transparent"
+										value={item.value}
+										onChange={onChangeInput(item)}
+									/>
+									{lengthUnitEingabe}
+								</div>
+							</div>
+						);
+					}
+					return <div />;
+				})}
+			</div>
+			{/* <div className="flex flex-col-reverse items-center w-full -mt-8 sm:items-start sm:flex-row">
 				<div className="w-full overflow-auto">
 					<table className="w-full">
 						<thead>
-							<tr className="border-b border-gray-800">
+							<tr className="border-gray-800 ">
 								<th className="w-5/12 sm:px-1">Bezeichnung</th>
 								<th
 									className="w-2 sm:w-auto sm:px-1"
@@ -130,15 +180,8 @@ function Geometrie({
 						</tbody>
 					</table>
 				</div>
-				<div className="object-contain sm:mt-8 2xl:ml-2 w-44 h-44">
-					<img
-						src={currentQuerschnittObject.svg_src}
-						className=""
-						alt="Querschnitt Skizze"
-					/>
-				</div>
-			</div>
-		</>
+			</div> */}
+		</div>
 	);
 }
 

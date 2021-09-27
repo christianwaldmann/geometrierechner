@@ -43,8 +43,8 @@ function Material({
 	};
 
 	return (
-		<>
-			<h2 className="mt-24 mb-12 text-3xl font-semibold text-center sm:mt-16 sm:text-left sm:mb-2">
+		<div>
+			<h2 className="pt-4 mt-24 mb-12 text-sm font-semibold text-gray-600 border-t sm:mt-8 sm:mb-2">
 				Material
 			</h2>
 			<div className="mt-4">
@@ -63,7 +63,58 @@ function Material({
 					})}
 				</select>
 			</div>
-			<div className="w-full mt-4">
+			<div className="-mt-1">
+				<div className="flex my-1">
+					<div className="flex items-center w-1/2">
+						Dichte
+						<div className="ml-2 font-bold">(ρ)</div>
+					</div>
+					<div className="flex w-1/2 px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none">
+						<input
+							type="number"
+							min="0"
+							step="any"
+							className="flex-grow w-24 text-right bg-transparent"
+							value={dichte}
+							onChange={onChangeDichte}
+						/>
+						kg/dm³
+					</div>
+				</div>
+				<div className="flex my-1">
+					<div className="flex items-center w-1/2">
+						E-Modul <div className="ml-2 font-bold">(E)</div>
+					</div>
+					<div className="flex w-1/2 px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none">
+						<input
+							type="number"
+							min="0"
+							step="any"
+							className="flex-grow w-24 text-right bg-transparent"
+							value={emodul}
+							onChange={onChangeEmodul}
+						/>
+						N/mm²
+					</div>
+				</div>
+				<div className="flex my-1">
+					<div className="flex items-center w-1/2">
+						G-Modul <div className="ml-2 font-bold">(G)</div>
+					</div>
+					<div className="flex w-1/2 px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded sm:py-1 focus:outline-none">
+						<input
+							type="number"
+							min="0"
+							step="any"
+							className="flex-grow w-24 text-right bg-transparent"
+							value={gmodul}
+							onChange={onChangeGmodul}
+						/>
+						N/mm²
+					</div>
+				</div>
+			</div>
+			{/* <div className="w-full mt-4">
 				<table className="w-full overflow-auto">
 					<thead>
 						<tr className="border-b border-gray-800">
@@ -127,8 +178,8 @@ function Material({
 						</tr>
 					</tbody>
 				</table>
-			</div>
-		</>
+			</div> */}
+		</div>
 	);
 }
 

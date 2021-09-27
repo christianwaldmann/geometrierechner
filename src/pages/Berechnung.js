@@ -122,7 +122,7 @@ export default function Berechnung() {
 	return (
 		<div className="grid grid-cols-1 gap-4 xl:grid-rows-1 xl:grid-cols-2">
 			<div className="w-full p-0 mt-4 bg-white border-b-0 sm:border sm:rounded-lg">
-				<div className="px-6 pb-8 sm:pb-12 sm:px-10">
+				<div className="px-6 pb-8 h-230 sm:pb-12 sm:px-10">
 					<GeometrieMemoized
 						p1={p1}
 						setP1={setP1}
