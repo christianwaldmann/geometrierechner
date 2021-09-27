@@ -35,7 +35,7 @@ function Belastung({
 			<DropdownSelectionLabeledImage
 				className="mt-4"
 				label="Lastfall"
-				src="/assets/Belastung.svg"
+				src="/assets/belastung.svg"
 				alt="Lastfall Skizze"
 				// onChange={onChangeQuerschnitt}
 			>
