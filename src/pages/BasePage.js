@@ -29,7 +29,7 @@ BasePage.Header = function BasePageHeader() {
 			)}
 			<div className="container flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0">
 				<Link
-					className="flex items-center pl-4 text-2xl font-bold text-black no-underline toggleColour hover:no-underline sm:pl-10 hover:text-gray-600"
+					className="flex items-center ml-4 text-2xl font-bold text-black no-underline toggleColour hover:no-underline sm:ml-10 hover:text-gray-600"
 					to="/"
 				>
 					<svg
@@ -88,10 +88,7 @@ BasePage.Header = function BasePageHeader() {
 						</svg>
 					</button>
 				</div>
-				<div
-					className="z-20 flex-grow hidden w-full p-4 mt-2 mr-4 text-black bg-white lg:flex lg:items-center lg:w-auto lg:mt-0 lg:bg-transparent lg:p-0"
-					id="nav-content"
-				>
+				<div className="z-20 flex-grow hidden w-full p-4 mt-2 mr-4 text-black bg-white lg:flex lg:items-center lg:w-auto lg:mt-0 lg:bg-transparent lg:p-0">
 					<ul className="items-center justify-end flex-1 list-reset lg:flex">
 						<li className="mr-3">
 							<Link

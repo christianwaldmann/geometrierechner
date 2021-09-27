@@ -1,7 +1,7 @@
 import { pdf } from "@react-pdf/renderer";
 import { saveAs } from "file-saver";
 import React from "react";
-import { Report } from "./Report";
+import { Report } from "../container/Report";
 
 export default function ReportButton({ ...restProps }) {
 	return (

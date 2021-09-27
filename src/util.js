@@ -10,7 +10,10 @@ import {
 } from "./Constants";
 
 export const displayWithFixedDecimalPlaces = (number, n) => {
-	return parseFloat(number).toFixed(n);
+	return number.toLocaleString(navigator.language, {
+		minimumFractionDigits: n,
+		maximumFractionDigits: n,
+	});
 };
 
 export function getLengthUnitFactor(lengthUnit) {
