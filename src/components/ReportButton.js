@@ -3,10 +3,13 @@ import { saveAs } from "file-saver";
 import React from "react";
 import { Report } from "../container/Report";
 
-export default function ReportButton({ ...restProps }) {
+export default function ReportButton({ disabled, ...restProps }) {
 	return (
 		<button
-			className="flex items-center px-4 py-2 text-white bg-indigo-400 rounded hover:bg-indigo-300"
+			disabled={disabled}
+			className={`flex items-center px-4 py-2 text-white bg-indigo-400 rounded hover:bg-indigo-300 ${
+				disabled && "cursor-not-allowed"
+			}`}
 			onClick={async () => {
 				// Solutions to download PDF according to @react-pdf/renderer docs:
 				// - PDFDownloadLink -> Problem: slow performance because PDF gets always regenerated on every input change

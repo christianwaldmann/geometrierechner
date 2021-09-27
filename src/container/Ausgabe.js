@@ -100,6 +100,9 @@ export default function Ausgabe({
 			<div className="flex-grow" />
 			<div className="pt-20 pb-12 mx-auto sm:pt-10">
 				<ReportButton
+					disabled={currentQuerschnittObject.ausgabe.every(
+						(item) => !item.isComputable
+					)}
 					parameters={parameters}
 					kraftInZ={kraftInZ}
 					kraftInY={kraftInY}
