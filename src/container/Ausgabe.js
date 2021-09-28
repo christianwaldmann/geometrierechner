@@ -143,14 +143,14 @@ Ausgabe.Row = function AusgabeRow({
 				}}
 			/>
 			<div
-				className={`flex items-center w-1/3 pl-6 font-semibold ${
+				className={`flex items-center pl-6 font-semibold ${
 					grayOut ? "text-gray-200" : "text-gray-400"
 				}`}
 			>
 				{symbol}
 			</div>
-			<div className="flex items-center justify-end w-1/3 font-semibold">
-				<span className="w-full text-right select-all">{value}</span>
+			<div className="flex items-center justify-end flex-grow font-semibold">
+				<span className="text-right select-all">{value}</span>
 				<span
 					className={`flex items-center pr-3 ml-2 w-14 ${
 						grayOut ? "hidden" : "text-gray-600"
