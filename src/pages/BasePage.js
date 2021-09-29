@@ -113,7 +113,7 @@ BasePage.Header = function BasePageHeader({ active }) {
 						<li className="mr-3">
 							<a
 								href="https://github.com/christianwaldmann/geometrierechner"
-								className="flex items-center px-4 py-2 font-bold hover:text-indigo-500"
+								className="flex items-center px-4 py-2 font-bold hover:text-indigo-600"
 							>
 								<span>Quellcode</span>
 								<svg
