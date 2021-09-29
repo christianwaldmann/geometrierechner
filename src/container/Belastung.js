@@ -4,10 +4,13 @@ import SectionHeader from "../components/SectionHeader";
 import DropdownSelectionLabeledImage from "../components/DropdownSelectionLabeledImage";
 
 function Belastung({
+	enableKraftInZ,
 	kraftInZ,
 	setKraftInZ,
+	enableKraftInY,
 	kraftInY,
 	setKraftInY,
+	enableDrehmoment,
 	drehmoment,
 	setDrehmoment,
 }) {
@@ -30,7 +33,7 @@ function Belastung({
 	};
 
 	return (
-		<>
+		<div className="sm:h-66">
 			<SectionHeader className="sm:border-t">Belastung</SectionHeader>
 			<DropdownSelectionLabeledImage
 				className="mt-4"
@@ -42,32 +45,38 @@ function Belastung({
 				<DropdownSelectionLabeledImage.Option value="Balken einseitig" />
 			</DropdownSelectionLabeledImage>
 			<div className="-mt-8">
-				<InputLabeled
-					label="Kraft in z-Achse"
-					symbol="Fz"
-					value={kraftInZ}
-					onChange={onChangeKraftInZ}
-					className="w-1/2"
-					unit="N"
-				/>
-				<InputLabeled
-					label="Kraft in y-Achse"
-					symbol="Fy"
-					value={kraftInY}
-					onChange={onChangeKraftInY}
-					className="w-1/2"
-					unit="N"
-				/>
-				<InputLabeled
-					label="Drehmoment"
-					symbol="Mz"
-					value={drehmoment}
-					onChange={onChangeDrehmoment}
-					className="w-1/2"
-					unit="Nm"
-				/>
+				{enableKraftInZ && (
+					<InputLabeled
+						label="Kraft in z-Achse"
+						symbol="Fz"
+						value={kraftInZ}
+						onChange={onChangeKraftInZ}
+						className="w-1/2"
+						unit="N"
+					/>
+				)}
+				{enableKraftInY && (
+					<InputLabeled
+						label="Kraft in y-Achse"
+						symbol="Fy"
+						value={kraftInY}
+						onChange={onChangeKraftInY}
+						className="w-1/2"
+						unit="N"
+					/>
+				)}
+				{enableDrehmoment && (
+					<InputLabeled
+						label="Drehmoment"
+						symbol="Mz"
+						value={drehmoment}
+						onChange={onChangeDrehmoment}
+						className="w-1/2"
+						unit="Nm"
+					/>
+				)}
 			</div>
-		</>
+		</div>
 	);
 }
 

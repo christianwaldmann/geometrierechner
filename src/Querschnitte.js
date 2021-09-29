@@ -11,6 +11,9 @@ const kreis = {
 	name: "Kreis",
 	svg_src: "assets/kreis.svg",
 	png_src: "assets/kreis.png",
+	enableKraftInZ: true,
+	enableKraftInY: true,
+	enableDrehmoment: true,
 	parameters: [
 		{
 			intern: "p1",
@@ -510,6 +513,9 @@ const rechteck = {
 	name: "Rechteck",
 	svg_src: "assets/rechteck.svg",
 	png_src: "assets/rechteck.png",
+	enableKraftInZ: true,
+	enableKraftInY: true,
+	enableDrehmoment: false,
 	parameters: [
 		{
 			intern: "p1",

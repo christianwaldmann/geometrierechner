@@ -152,6 +152,9 @@ export default function Berechnung() {
 						setGmodul={setGmodul}
 					/>
 					<BelastungMemoized
+						enableKraftInZ={currentQuerschnittObject.enableKraftInZ}
+						enableKraftInY={currentQuerschnittObject.enableKraftInY}
+						enableDrehmoment={currentQuerschnittObject.enableDrehmoment}
 						kraftInZ={kraftInZ}
 						setKraftInZ={setKraftInZ}
 						kraftInY={kraftInY}
