@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="lastfall_balken_beidseitig - Kopie.svg"
+   sodipodi:docname="lastfall_balken_einseitig.svg"
    inkscape:export-filename="C:\Users\Christian\Documents\.src\01_Programmieren\05_React\geometrierechner\public\assets\lastfall_balken_einseitig.png"
    inkscape:export-xdpi="564.70587"
    inkscape:export-ydpi="564.70587">
@@ -266,9 +266,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="-11.133812"
-     inkscape:cy="57.110504"
+     inkscape:zoom="11.313708"
+     inkscape:cx="-0.27653142"
+     inkscape:cy="42.978737"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -449,8 +449,8 @@
          id="tspan3032"
          sodipodi:role="line">l</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26456693;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2744)"
-       d="M 70.570505,164.87041 110.16847,142.00853"
+       style="fill:none;stroke:#000000;stroke-width:0.26456693;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2744);marker-end:url(#marker2228)"
+       d="M 70.566863,164.87251 109.84059,142.19783"
        id="path2192"
        inkscape:connector-curvature="0" />
     <path
