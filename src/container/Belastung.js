@@ -2,8 +2,11 @@ import React from "react";
 import InputLabeled from "../components/InputLabeled";
 import SectionHeader from "../components/SectionHeader";
 import DropdownSelectionLabeledImage from "../components/DropdownSelectionLabeledImage";
+import { lastfaelle } from "../Lastfaelle";
 
 function Belastung({
+	lastfallSvgSrc,
+	setCurrentLastfall,
 	enableKraftInZ,
 	kraftInZ,
 	setKraftInZ,
@@ -14,6 +17,10 @@ function Belastung({
 	drehmoment,
 	setDrehmoment,
 }) {
+	const onChangeLastfall = (e) => {
+		setCurrentLastfall(e.target.value);
+	};
+
 	const onChangeKraftInZ = (e) => {
 		if (e.target.checkValidity()) {
 			setKraftInZ(parseFloat(e.target.value));
@@ -33,49 +40,54 @@ function Belastung({
 	};
 
 	return (
-		<div className="sm:h-66">
+		<div className="sm:h-70">
 			<SectionHeader className="sm:border-t">Belastung</SectionHeader>
 			<DropdownSelectionLabeledImage
 				className="mt-4"
 				label="Lastfall"
-				src="/assets/belastung.svg"
+				src={lastfallSvgSrc}
 				alt="Lastfall Skizze"
-				// onChange={onChangeQuerschnitt}
+				onChange={onChangeLastfall}
 			>
-				<DropdownSelectionLabeledImage.Option value="Balken einseitig" />
+				{lastfaelle.map((item, index) => {
+					return (
+						<DropdownSelectionLabeledImage.Option
+							value={item.name}
+							key={index}
+						/>
+					);
+				})}
 			</DropdownSelectionLabeledImage>
-			<div className="-mt-8">
-				{enableKraftInZ && (
-					<InputLabeled
-						label="Kraft in z-Achse"
-						symbol="Fz"
-						value={kraftInZ}
-						onChange={onChangeKraftInZ}
-						className="w-1/2"
-						unit="N"
-					/>
-				)}
-				{enableKraftInY && (
-					<InputLabeled
-						label="Kraft in y-Achse"
-						symbol="Fy"
-						value={kraftInY}
-						onChange={onChangeKraftInY}
-						className="w-1/2"
-						unit="N"
-					/>
-				)}
-				{enableDrehmoment && (
-					<InputLabeled
-						label="Drehmoment"
-						symbol="Mz"
-						value={drehmoment}
-						onChange={onChangeDrehmoment}
-						className="w-1/2"
-						unit="Nm"
-					/>
-				)}
-			</div>
+			{enableKraftInZ && (
+				<InputLabeled
+					label="Kraft in z-Achse"
+					symbol="Fz"
+					value={kraftInZ}
+					onChange={onChangeKraftInZ}
+					className="w-1/2"
+					unit="N"
+				/>
+			)}
+			{enableKraftInY && (
+				<InputLabeled
+					label="Kraft in y-Achse"
+					symbol="Fy"
+					value={kraftInY}
+					onChange={onChangeKraftInY}
+					className="w-1/2"
+					unit="N"
+				/>
+			)}
+			{enableDrehmoment && (
+				<InputLabeled
+					label="Drehmoment"
+					symbol="Mz"
+					value={drehmoment}
+					onChange={onChangeDrehmoment}
+					className="w-1/2"
+					unit="Nm"
+				/>
+			)}
 		</div>
 	);
 }

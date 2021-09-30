@@ -6,10 +6,11 @@ import DropdownSelection from "../components/DropdownSelection";
 import { UNIT_MM, UNIT_CM, UNIT_DM, UNIT_M } from "../Constants";
 
 export default function Ausgabe({
-	berechneteGroessenDisplayUnit,
+	berechneteGroessen,
 	lengthUnitAusgabe,
 	setLengthUnitAusgabe,
 	currentQuerschnittObject,
+	currentLastfallObject,
 	parameters,
 	werkstoff,
 	dichte,
@@ -65,7 +66,7 @@ export default function Ausgabe({
 					</DropdownSelection>
 				</div>
 				<div className="mt-8 text-base divide-y-2 divide-gray-100">
-					{currentQuerschnittObject.ausgabe.map((item, index) => {
+					{berechneteGroessen.map((item, index) => {
 						return (
 							<Ausgabe.Row
 								key={index}
@@ -75,23 +76,12 @@ export default function Ausgabe({
 								value={
 									item.isComputable
 										? displayWithFixedDecimalPlaces(
-												berechneteGroessenDisplayUnit[
-													index
-												],
+												item.value,
 												nachkommastellen
 										  )
 										: ""
 								}
-								unit={
-									item.isNotLengthUnit === true ? (
-										<>{item.unit}</>
-									) : (
-										<>
-											{lengthUnitAusgabe}
-											{item.unitHoch}
-										</>
-									)
-								}
+								unit={item.unit}
 							/>
 						);
 					})}
@@ -100,7 +90,7 @@ export default function Ausgabe({
 			<div className="flex-grow" />
 			<div className="pt-20 pb-12 mx-auto sm:pt-10">
 				<ReportButton
-					disabled={currentQuerschnittObject.ausgabe.every(
+					disabled={berechneteGroessen.every(
 						(item) => !item.isComputable
 					)}
 					parameters={parameters}
@@ -113,16 +103,11 @@ export default function Ausgabe({
 					gmodul={gmodul}
 					lengthUnitEingabe={lengthUnitEingabe}
 					lengthUnitAusgabe={lengthUnitAusgabe}
-					berechneteGroessenDisplayUnit={
-						berechneteGroessenDisplayUnit
-					}
+					berechneteGroessen={berechneteGroessen}
 					nachkommastellen={nachkommastellen}
 					currentQuerschnittObject={currentQuerschnittObject}
 				/>
 			</div>
-			<h2 className="absolute bottom-0 left-0 hidden w-full py-0 text-xs font-bold text-center text-indigo-700 bg-gray-200 rounded-b sm:block">
-				AUSGABE
-			</h2>
 		</div>
 	);
 }

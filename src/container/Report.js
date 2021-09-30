@@ -156,7 +156,7 @@ export function Report({
 	gmodul,
 	lengthUnitEingabe,
 	lengthUnitAusgabe,
-	berechneteGroessenDisplayUnit,
+	berechneteGroessen,
 	nachkommastellen,
 	currentQuerschnittObject,
 }) {
@@ -401,7 +401,7 @@ export function Report({
 								</Text>
 							</View>
 						</View>
-						{currentQuerschnittObject.ausgabe.map((item, index) => {
+						{berechneteGroessen.map((item, index) => {
 							if (item.isComputable) {
 								return (
 									<View style={styles.tableRow} key={index}>
@@ -425,24 +425,14 @@ export function Report({
 										<View style={styles.tableCol3}>
 											<Text style={styles.tableCell}>
 												{displayWithFixedDecimalPlaces(
-													berechneteGroessenDisplayUnit[
-														index
-													],
+													item.value,
 													nachkommastellen
 												)}
 											</Text>
 										</View>
 										<View style={styles.tableCol4}>
 											<Text style={styles.tableCell}>
-												{item.isNotLengthUnit ===
-												true ? (
-													<>{item.unit}</>
-												) : (
-													<>
-														{lengthUnitAusgabe}
-														{item.unitHoch}
-													</>
-												)}
+												{item.unit}
 											</Text>
 										</View>
 									</View>

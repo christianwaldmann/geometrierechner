@@ -7,6 +7,7 @@ import SectionHeader from "../components/SectionHeader";
 import DropdownSelectionLabeledImage from "../components/DropdownSelectionLabeledImage";
 
 function Geometrie({
+	querschnittSvgSrc,
 	p1,
 	setP1,
 	p2,
@@ -23,6 +24,11 @@ function Geometrie({
 	setLengthUnitEingabe,
 	currentQuerschnittObject,
 	setCurrentQuerschnitt,
+	setFlaeche,
+	setAxialesWiderstandsmoment,
+	setPolaresWiderstandsmoment,
+	setAxialesTraegheitsmoment,
+	setPolaresTraegheitsmoment,
 }) {
 	const onChangeQuerschnitt = (e) => {
 		setCurrentQuerschnitt(e.target.value);
@@ -31,6 +37,11 @@ function Geometrie({
 		setP3(0);
 		setP4(0);
 		setP5(0);
+		setFlaeche(0);
+		setAxialesWiderstandsmoment(0);
+		setPolaresWiderstandsmoment(0);
+		setAxialesTraegheitsmoment(0);
+		setPolaresTraegheitsmoment(0);
 	};
 
 	const onChangeLengthUnitEingabe = (e) => {
@@ -63,7 +74,7 @@ function Geometrie({
 			<DropdownSelectionLabeledImage
 				className="mt-4"
 				label="Querschnitt"
-				src={currentQuerschnittObject.svg_src}
+				src={querschnittSvgSrc}
 				alt="Querschnitt Skizze"
 				onChange={onChangeQuerschnitt}
 			>
