@@ -15,7 +15,7 @@ BasePage.Header = function BasePageHeader({ active }) {
 	const [showDropdown, setShowDropdown] = useState(false);
 
 	return (
-		<nav className="w-full bg-white">
+		<header className="z-50 w-full bg-white shadow-sm ring-1 ring-gray-900 ring-opacity-5">
 			{process.env.REACT_APP_DEPLOYMENT_ENV === "stage" && (
 				<div className="text-xs font-bold text-center text-white bg-blue-500">
 					<a
@@ -27,13 +27,13 @@ BasePage.Header = function BasePageHeader({ active }) {
 					</a>
 				</div>
 			)}
-			<div className="container flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0">
+			<nav className="container flex flex-wrap items-center justify-between py-4 mx-auto mt-0">
 				<Link
-					className="flex items-center ml-4 text-2xl font-bold text-gray-900 no-underline toggleColour hover:no-underline sm:ml-10 hover:text-gray-600"
+					className="flex items-center ml-6 text-xl font-bold text-gray-800 no-underline sm:ml-0 toggleColour hover:no-underline hover:text-gray-600"
 					to="/"
 				>
 					<svg
-						className="w-8 h-8"
+						className="w-6 h-6"
 						xmlns="http://www.w3.org/2000/svg"
 						height="100%"
 						width="100%"
@@ -73,47 +73,70 @@ BasePage.Header = function BasePageHeader({ active }) {
 					</svg>
 					<span className="ml-3">Geometrie Rechner</span>
 				</Link>
-				<div className="block pr-4 lg:hidden">
+				<div className="block pr-6 lg:hidden">
 					<button
-						className="flex items-center p-1 transition duration-300 ease-in-out transform hover:text-gray-900 focus:outline-none focus:shadow-outline hover:scale-105"
+						className="flex items-center transition duration-300 ease-in-out transform hover:text-gray-900 focus:outline-none focus:shadow-outline"
 						onClick={() => setShowDropdown(!showDropdown)}
 					>
-						<svg
-							className="w-6 h-6 fill-current"
-							viewBox="0 0 20 20"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<title>Menu</title>
-							<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-						</svg>
+						{showDropdown ? (
+							<svg
+								className="w-6 h-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						) : (
+							<svg
+								className="w-6 h-6"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M4 6h16M4 12h16M4 18h16"
+								/>
+							</svg>
+						)}
 					</button>
 				</div>
-				<div className="z-20 flex-grow hidden w-full p-4 mt-2 mr-4 text-black bg-white lg:flex lg:items-center lg:w-auto lg:mt-0 lg:bg-transparent lg:p-0">
-					<ul className="items-center justify-end flex-1 text-gray-400 list-reset lg:flex">
-						<li className="mr-3">
+				<div className="z-20 flex-grow hidden w-full p-4 mt-2 text-black bg-white lg:flex lg:items-center lg:w-auto lg:mt-0 lg:bg-transparent lg:p-0">
+					<ul className="items-center justify-end flex-1 text-gray-500 list-reset lg:flex">
+						<li>
 							<Link
 								to="/"
-								className={`inline-block px-4 py-2 font-bold hover:text-indigo-600 ${
+								className={`inline-block text-sm font-medium hover:text-indigo-600 ${
 									active === "Berechnung" && "text-indigo-600"
 								}`}
 							>
 								Berechnung
 							</Link>
 						</li>
-						<li className="mr-3">
+						<li className="mx-6">
 							<Link
 								to="/formeln"
-								className={`inline-block px-4 py-2 font-bold hover:text-indigo-600 ${
+								className={`inline-block text-sm font-medium hover:text-indigo-600 ${
 									active === "Formeln" && "text-indigo-600"
 								}`}
 							>
 								Formeln
 							</Link>
 						</li>
-						<li className="mr-3">
+						<li className="">
 							<a
 								href="https://github.com/christianwaldmann/geometrierechner"
-								className="flex items-center px-4 py-2 font-bold hover:text-indigo-600"
+								className="flex items-center pl-6 text-sm font-medium border-l border-gray-200 hover:text-indigo-600"
 							>
 								<span>Quellcode</span>
 								<svg
@@ -134,34 +157,34 @@ BasePage.Header = function BasePageHeader({ active }) {
 						</li>
 					</ul>
 				</div>
-			</div>
+			</nav>
 
-			{showDropdown ? (
-				<ul className="w-full py-2 border-b-2">
-					<li className="mx-4 border-t">
+			{showDropdown && (
+				<ul className="w-full py-2">
+					<li className="mx-6 border-t">
 						<Link
 							to="/"
-							className="inline-block w-full py-2 text-base font-semibold text-black hover:text-gray-600"
+							className="inline-block w-full py-2 text-base font-semibold text-gray-800 hover:text-gray-600"
 						>
 							Berechnung
 						</Link>
 					</li>
-					<li className="mx-4 border-t">
+					<li className="mx-6 border-t">
 						<Link
 							to="/formeln"
-							className="inline-block w-full py-2 text-base font-semibold text-black hover:text-gray-600"
+							className="inline-block w-full py-2 text-base font-semibold text-gray-800 hover:text-gray-600"
 						>
 							Formeln
 						</Link>
 					</li>
-					<li className="mx-4 border-t">
+					<li className="mx-6 border-t">
 						<a
 							href="https://github.com/christianwaldmann/geometrierechner"
-							className="flex items-center justify-between w-full py-2 text-base font-semibold text-black hover:text-gray-600"
+							className="flex items-center justify-between w-full py-2 text-base font-semibold text-gray-800 hover:text-gray-600"
 						>
 							<span>Quellcode</span>
 							<svg
-								className="w-5 h-5 mr-2"
+								className="w-4 h-4 mr-2"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -177,10 +200,8 @@ BasePage.Header = function BasePageHeader({ active }) {
 						</a>
 					</li>
 				</ul>
-			) : (
-				<hr className="border-t-0 border-b border-gray-200" />
 			)}
-		</nav>
+		</header>
 	);
 };
 
