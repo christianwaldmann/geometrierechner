@@ -251,6 +251,15 @@ export default function Berechnung() {
 		}
 	});
 
+	const enableKraftInZ =
+		currentQuerschnittObject.enableKraftInZ &&
+		currentLastfallObject.enableKraftInZ;
+	const enableKraftInY =
+		currentQuerschnittObject.enableKraftInY &&
+		currentLastfallObject.enableKraftInY;
+	const enableDrehmoment =
+		currentQuerschnittObject.enableDrehmoment &&
+		currentLastfallObject.enableDrehmoment;
 	return (
 		<div className="grid grid-cols-1 gap-4 xl:grid-rows-1 xl:grid-cols-2">
 			<div className="relative w-full p-0 bg-white border-b-0 sm:border sm:rounded-lg sm:mt-4">
@@ -296,18 +305,9 @@ export default function Berechnung() {
 					<BelastungMemoized
 						lastfallSvgSrc={currentLastfallObject.svg_src}
 						setCurrentLastfall={setCurrentLastfall}
-						enableKraftInZ={
-							currentQuerschnittObject.enableKraftInZ &&
-							currentLastfallObject.enableKraftInZ
-						}
-						enableKraftInY={
-							currentQuerschnittObject.enableKraftInY &&
-							currentLastfallObject.enableKraftInY
-						}
-						enableDrehmoment={
-							currentQuerschnittObject.enableDrehmoment &&
-							currentLastfallObject.enableDrehmoment
-						}
+						enableKraftInZ={enableKraftInZ}
+						enableKraftInY={enableKraftInY}
+						enableDrehmoment={enableDrehmoment}
 						kraftInZ={kraftInZ}
 						setKraftInZ={setKraftInZ}
 						kraftInY={kraftInY}
@@ -338,6 +338,9 @@ export default function Berechnung() {
 				p4={p4}
 				p5={p5}
 				p6={p6}
+				enableKraftInZ={enableKraftInZ}
+				enableKraftInY={enableKraftInY}
+				enableDrehmoment={enableDrehmoment}
 			/>
 		</div>
 	);

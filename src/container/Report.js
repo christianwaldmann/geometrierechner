@@ -129,6 +129,9 @@ export function Report({
 	currentQuerschnittObject,
 	lastfallName,
 	lastfallSrc,
+	enableKraftInZ,
+	enableKraftInY,
+	enableDrehmoment,
 }) {
 	return (
 		<Document>
@@ -364,72 +367,78 @@ export function Report({
 								></Text>
 							</View>
 						</View>
-						<View style={styles.tableRow}>
-							<View style={styles.tableCol1}>
-								<Text style={styles.tableCellLeftAligned}>
-									Kraft in z-Achse
-								</Text>
+						{enableKraftInZ && (
+							<View style={styles.tableRow}>
+								<View style={styles.tableCol1}>
+									<Text style={styles.tableCellLeftAligned}>
+										Kraft in z-Achse
+									</Text>
+								</View>
+								<View style={styles.tableCol2}>
+									<Text style={styles.tableCellLeftAligned}>
+										Fz
+									</Text>
+								</View>
+								<View style={styles.tableCol3}>
+									<Text style={styles.tableCellRightAligned}>
+										{kraftInZ}
+									</Text>
+								</View>
+								<View style={styles.tableCol4}>
+									<Text style={styles.tableCellLeftAligned}>
+										N
+									</Text>
+								</View>
 							</View>
-							<View style={styles.tableCol2}>
-								<Text style={styles.tableCellLeftAligned}>
-									Fz
-								</Text>
+						)}
+						{enableKraftInY && (
+							<View style={styles.tableRow}>
+								<View style={styles.tableCol1}>
+									<Text style={styles.tableCellLeftAligned}>
+										Kraft in y-Achse
+									</Text>
+								</View>
+								<View style={styles.tableCol2}>
+									<Text style={styles.tableCellLeftAligned}>
+										Fy
+									</Text>
+								</View>
+								<View style={styles.tableCol3}>
+									<Text style={styles.tableCellRightAligned}>
+										{kraftInY}
+									</Text>
+								</View>
+								<View style={styles.tableCol4}>
+									<Text style={styles.tableCellLeftAligned}>
+										N
+									</Text>
+								</View>
 							</View>
-							<View style={styles.tableCol3}>
-								<Text style={styles.tableCellRightAligned}>
-									{kraftInZ}
-								</Text>
+						)}
+						{enableDrehmoment && (
+							<View style={styles.tableRow}>
+								<View style={styles.tableCol1}>
+									<Text style={styles.tableCellLeftAligned}>
+										Drehmoment
+									</Text>
+								</View>
+								<View style={styles.tableCol2}>
+									<Text style={styles.tableCellLeftAligned}>
+										Mz
+									</Text>
+								</View>
+								<View style={styles.tableCol3}>
+									<Text style={styles.tableCellRightAligned}>
+										{drehmoment}
+									</Text>
+								</View>
+								<View style={styles.tableCol4}>
+									<Text style={styles.tableCellLeftAligned}>
+										Nm
+									</Text>
+								</View>
 							</View>
-							<View style={styles.tableCol4}>
-								<Text style={styles.tableCellLeftAligned}>
-									N
-								</Text>
-							</View>
-						</View>
-						<View style={styles.tableRow}>
-							<View style={styles.tableCol1}>
-								<Text style={styles.tableCellLeftAligned}>
-									Kraft in y-Achse
-								</Text>
-							</View>
-							<View style={styles.tableCol2}>
-								<Text style={styles.tableCellLeftAligned}>
-									Fy
-								</Text>
-							</View>
-							<View style={styles.tableCol3}>
-								<Text style={styles.tableCellRightAligned}>
-									{kraftInY}
-								</Text>
-							</View>
-							<View style={styles.tableCol4}>
-								<Text style={styles.tableCellLeftAligned}>
-									N
-								</Text>
-							</View>
-						</View>
-						<View style={styles.tableRow}>
-							<View style={styles.tableCol1}>
-								<Text style={styles.tableCellLeftAligned}>
-									Drehmoment
-								</Text>
-							</View>
-							<View style={styles.tableCol2}>
-								<Text style={styles.tableCellLeftAligned}>
-									Mz
-								</Text>
-							</View>
-							<View style={styles.tableCol3}>
-								<Text style={styles.tableCellRightAligned}>
-									{drehmoment}
-								</Text>
-							</View>
-							<View style={styles.tableCol4}>
-								<Text style={styles.tableCellLeftAligned}>
-									Nm
-								</Text>
-							</View>
-						</View>
+						)}
 					</View>
 				</View>
 				{/* Berechnete Eigenschaften */}

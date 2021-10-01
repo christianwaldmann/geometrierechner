@@ -7,7 +7,6 @@ import { UNIT_MM, UNIT_CM, UNIT_DM, UNIT_M } from "../Constants";
 
 export default function Ausgabe({
 	berechneteGroessen,
-	lengthUnitAusgabe,
 	setLengthUnitAusgabe,
 	currentQuerschnittObject,
 	currentLastfallObject,
@@ -20,12 +19,9 @@ export default function Ausgabe({
 	kraftInY,
 	drehmoment,
 	lengthUnitEingabe,
-	p1,
-	p2,
-	p3,
-	p4,
-	p5,
-	p6,
+	enableKraftInZ,
+	enableKraftInY,
+	enableDrehmoment,
 }) {
 	const [nachkommastellen, setNachkommastellen] = useState(2);
 
@@ -107,6 +103,9 @@ export default function Ausgabe({
 					currentQuerschnittObject={currentQuerschnittObject}
 					lastfallName={currentLastfallObject.name}
 					lastfallSrc={currentLastfallObject.png_src}
+					enableKraftInZ={enableKraftInZ}
+					enableKraftInY={enableKraftInY}
+					enableDrehmoment={enableDrehmoment}
 				/>
 			</div>
 		</div>
