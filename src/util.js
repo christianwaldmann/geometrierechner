@@ -9,7 +9,11 @@ import {
 	UNIT_M_FACTOR,
 } from "./Constants";
 
-export const displayWithFixedDecimalPlaces = (number, n) => {
+export const displayNumber = (number) => {
+	return number.toLocaleString(navigator.language);
+};
+
+export const displayNumberFixedDecimalPlaces = (number, n) => {
 	return number.toLocaleString(navigator.language, {
 		minimumFractionDigits: n,
 		maximumFractionDigits: n,

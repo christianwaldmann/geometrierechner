@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { displayWithFixedDecimalPlaces } from "../util";
+import { displayNumberFixedDecimalPlaces } from "../util";
 import ReportButton from "../components/ReportButton";
 import SectionHeader from "../components/SectionHeader";
 import DropdownSelection from "../components/DropdownSelection";
@@ -71,7 +71,7 @@ export default function Ausgabe({
 								symbol={item.symbol}
 								value={
 									item.isComputable
-										? displayWithFixedDecimalPlaces(
+										? displayNumberFixedDecimalPlaces(
 												item.value,
 												nachkommastellen
 										  )

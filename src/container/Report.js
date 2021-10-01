@@ -8,7 +8,7 @@ import {
 	Font,
 	Image,
 } from "@react-pdf/renderer";
-import { displayWithFixedDecimalPlaces } from "../util";
+import { displayNumber, displayNumberFixedDecimalPlaces } from "../util";
 
 Font.register({
 	family: "Open Sans",
@@ -213,7 +213,9 @@ export function Report({
 														styles.tableCellRightAligned
 													}
 												>
-													{parameters[index]}
+													{displayNumber(
+														parameters[index]
+													)}
 												</Text>
 											</View>
 											<View style={styles.tableCol4}>
@@ -270,7 +272,7 @@ export function Report({
 							</View>
 							<View style={styles.tableCol3}>
 								<Text style={styles.tableCellRightAligned}>
-									{dichte}
+									{displayNumber(dichte)}
 								</Text>
 							</View>
 							<View style={styles.tableCol4}>
@@ -292,7 +294,7 @@ export function Report({
 							</View>
 							<View style={styles.tableCol3}>
 								<Text style={styles.tableCellRightAligned}>
-									{emodul}
+									{displayNumber(emodul)}
 								</Text>
 							</View>
 							<View style={styles.tableCol4}>
@@ -314,7 +316,7 @@ export function Report({
 							</View>
 							<View style={styles.tableCol3}>
 								<Text style={styles.tableCellRightAligned}>
-									{gmodul}
+									{displayNumber(gmodul)}
 								</Text>
 							</View>
 							<View style={styles.tableCol4}>
@@ -381,7 +383,7 @@ export function Report({
 								</View>
 								<View style={styles.tableCol3}>
 									<Text style={styles.tableCellRightAligned}>
-										{kraftInZ}
+										{displayNumber(kraftInZ)}
 									</Text>
 								</View>
 								<View style={styles.tableCol4}>
@@ -405,7 +407,7 @@ export function Report({
 								</View>
 								<View style={styles.tableCol3}>
 									<Text style={styles.tableCellRightAligned}>
-										{kraftInY}
+										{displayNumber(kraftInY)}
 									</Text>
 								</View>
 								<View style={styles.tableCol4}>
@@ -429,7 +431,7 @@ export function Report({
 								</View>
 								<View style={styles.tableCol3}>
 									<Text style={styles.tableCellRightAligned}>
-										{drehmoment}
+										{displayNumber(drehmoment)}
 									</Text>
 								</View>
 								<View style={styles.tableCol4}>
@@ -476,7 +478,7 @@ export function Report({
 													styles.tableCellRightAligned
 												}
 											>
-												{displayWithFixedDecimalPlaces(
+												{displayNumberFixedDecimalPlaces(
 													item.value,
 													nachkommastellen
 												)}
