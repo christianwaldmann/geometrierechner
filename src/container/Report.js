@@ -83,62 +83,31 @@ const styles = StyleSheet.create({
 		textAlign: "left",
 		width: "100%",
 	},
-	tableCellHeader: {
-		textAlign: "center",
-		paddingTop: 3,
-		paddingBottom: 3,
+	tableCellRightAligned: {
+		margin: "auto",
+		paddingRight: 5,
 		fontSize: 10,
-		fontWeight: "bold",
-		backgroundColor: "#DCDCDC",
-	},
-	tableCellHeaderLeftAligned: {
-		paddingTop: 3,
-		paddingBottom: 3,
-		paddingLeft: 5,
-		fontSize: 10,
-		fontWeight: "bold",
-		backgroundColor: "#DCDCDC",
-		textAlign: "left",
+		textAlign: "right",
 		width: "100%",
 	},
 	tableContainer: {
-		margin: "30px 70px 0px 70px", // top margin is responsible for spacing between tables rn
+		margin: "8px 70px 0px 70px", // top margin is responsible for spacing between tables rn
 	},
-	h1: {
+	image: {
+		margin: "auto",
+		height: 80,
+	},
+	h2: {
 		margin: "40px 70px 0px 70px",
-		borderBottom: "1px solid black",
-		fontSize: 32,
+		fontSize: 10,
+		fontWeight: "bold",
 	},
 	date: {
 		position: "absolute",
 		bottom: "30",
 		width: "100%",
 		textAlign: "center",
-		fontSize: 10,
-	},
-	headTableCol1: {
-		width: "40%",
-		height: "90px",
-		borderStyle: "solid",
-		borderWidth: 1,
-		borderLeftWidth: 0,
-		borderTopWidth: 0,
-	},
-	headTableCol2: {
-		width: "20%",
-		height: "90px",
-		borderStyle: "solid",
-		borderWidth: 1,
-		borderLeftWidth: 0,
-		borderTopWidth: 0,
-	},
-	headTableCol3: {
-		width: "40%",
-		height: "90px",
-		borderStyle: "solid",
-		borderWidth: 1,
-		borderLeftWidth: 0,
-		borderTopWidth: 0,
+		fontSize: 8,
 	},
 });
 
@@ -155,59 +124,58 @@ export function Report({
 	emodul,
 	gmodul,
 	lengthUnitEingabe,
-	lengthUnitAusgabe,
 	berechneteGroessen,
 	nachkommastellen,
 	currentQuerschnittObject,
+	lastfallName,
+	lastfallSrc,
 }) {
 	return (
 		<Document>
 			<Page size="A4" style={styles.page}>
-				<Text style={styles.h1}>Geometrie</Text>
-				{/* Geometrie Table */}
-				<View style={styles.tableContainer}>
-					<View style={styles.table}>
-						<View style={styles.tableRow}>
-							<View style={styles.headTableCol1}>
-								<Text style={styles.tableCellLeftAligned}>
-									Querschnitt
-								</Text>
-							</View>
-							<View style={styles.headTableCol2}>
-								<Text style={styles.tableCell}>
-									{currentQuerschnittObject.name}
-								</Text>
-							</View>
-							<View style={styles.headTableCol3}>
-								<Image
-									src={currentQuerschnittObject.png_src}
-									style={styles.tableCell}
-								/>
-							</View>
-						</View>
-					</View>
-				</View>
-				{/* Eingabe Table */}
+				{/* Eingabe */}
+				<Text style={styles.h2}>Eingabe</Text>
 				<View style={styles.tableContainer}>
 					<View style={styles.table}>
 						<View style={styles.tableRow}>
 							<View style={styles.tableCol1}>
-								<Text style={styles.tableCellHeaderLeftAligned}>
-									Bezeichnung
+								<Text style={styles.tableCellLeftAligned}>
+									Querschnitt
 								</Text>
 							</View>
 							<View style={styles.tableCol2}>
-								<Text style={styles.tableCellHeader}>
-									Symbol
-								</Text>
+								<Text style={styles.tableCell}></Text>
 							</View>
 							<View style={styles.tableCol3}>
-								<Text style={styles.tableCellHeader}>Wert</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									{currentQuerschnittObject.name}
+								</Text>
 							</View>
 							<View style={styles.tableCol4}>
-								<Text style={styles.tableCellHeader}>
-									Einheit
-								</Text>
+								<Text
+									style={styles.tableCellLeftAligned}
+								></Text>
+							</View>
+						</View>
+						<View style={styles.tableRow}>
+							<View style={styles.tableCol1}>
+								<Text
+									style={styles.tableCellLeftAligned}
+								></Text>
+							</View>
+							<View style={styles.tableCol2}>
+								<Text style={styles.tableCell}></Text>
+							</View>
+							<View style={styles.tableCol3}>
+								<Image
+									src={currentQuerschnittObject.png_src}
+									style={styles.image}
+								/>
+							</View>
+							<View style={styles.tableCol4}>
+								<Text
+									style={styles.tableCellLeftAligned}
+								></Text>
 							</View>
 						</View>
 						{currentQuerschnittObject.parameters.map(
@@ -228,17 +196,29 @@ export function Report({
 												</Text>
 											</View>
 											<View style={styles.tableCol2}>
-												<Text style={styles.tableCell}>
+												<Text
+													style={
+														styles.tableCellLeftAligned
+													}
+												>
 													{item.symbol}
 												</Text>
 											</View>
 											<View style={styles.tableCol3}>
-												<Text style={styles.tableCell}>
+												<Text
+													style={
+														styles.tableCellRightAligned
+													}
+												>
 													{parameters[index]}
 												</Text>
 											</View>
 											<View style={styles.tableCol4}>
-												<Text style={styles.tableCell}>
+												<Text
+													style={
+														styles.tableCellLeftAligned
+													}
+												>
 													{lengthUnitEingabe}
 												</Text>
 											</View>
@@ -264,12 +244,14 @@ export function Report({
 								<Text style={styles.tableCell}></Text>
 							</View>
 							<View style={styles.tableCol3}>
-								<Text style={styles.tableCell}>
+								<Text style={styles.tableCellLeftAligned}>
 									{werkstoff}
 								</Text>
 							</View>
 							<View style={styles.tableCol4}>
-								<Text style={styles.tableCell}></Text>
+								<Text
+									style={styles.tableCellLeftAligned}
+								></Text>
 							</View>
 						</View>
 						<View style={styles.tableRow}>
@@ -279,13 +261,19 @@ export function Report({
 								</Text>
 							</View>
 							<View style={styles.tableCol2}>
-								<Text style={styles.tableCell}>ρ</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									ρ
+								</Text>
 							</View>
 							<View style={styles.tableCol3}>
-								<Text style={styles.tableCell}>{dichte}</Text>
+								<Text style={styles.tableCellRightAligned}>
+									{dichte}
+								</Text>
 							</View>
 							<View style={styles.tableCol4}>
-								<Text style={styles.tableCell}>kg/dm³</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									kg/dm³
+								</Text>
 							</View>
 						</View>
 						<View style={styles.tableRow}>
@@ -295,13 +283,19 @@ export function Report({
 								</Text>
 							</View>
 							<View style={styles.tableCol2}>
-								<Text style={styles.tableCell}>E</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									E
+								</Text>
 							</View>
 							<View style={styles.tableCol3}>
-								<Text style={styles.tableCell}>{emodul}</Text>
+								<Text style={styles.tableCellRightAligned}>
+									{emodul}
+								</Text>
 							</View>
 							<View style={styles.tableCol4}>
-								<Text style={styles.tableCell}>N/mm²</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									N/mm²
+								</Text>
 							</View>
 						</View>
 						<View style={styles.tableRow}>
@@ -311,13 +305,19 @@ export function Report({
 								</Text>
 							</View>
 							<View style={styles.tableCol2}>
-								<Text style={styles.tableCell}>G</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									G
+								</Text>
 							</View>
 							<View style={styles.tableCol3}>
-								<Text style={styles.tableCell}>{gmodul}</Text>
+								<Text style={styles.tableCellRightAligned}>
+									{gmodul}
+								</Text>
 							</View>
 							<View style={styles.tableCol4}>
-								<Text style={styles.tableCell}>N/mm²</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									N/mm²
+								</Text>
 							</View>
 						</View>
 						<View style={styles.tableRowDivider}>
@@ -329,17 +329,61 @@ export function Report({
 						<View style={styles.tableRow}>
 							<View style={styles.tableCol1}>
 								<Text style={styles.tableCellLeftAligned}>
+									Lastfall
+								</Text>
+							</View>
+							<View style={styles.tableCol2}>
+								<Text style={styles.tableCell}></Text>
+							</View>
+							<View style={styles.tableCol3}>
+								<Text style={styles.tableCellLeftAligned}>
+									{lastfallName}
+								</Text>
+							</View>
+							<View style={styles.tableCol4}>
+								<Text
+									style={styles.tableCellLeftAligned}
+								></Text>
+							</View>
+						</View>
+						<View style={styles.tableRow}>
+							<View style={styles.tableCol1}>
+								<Text
+									style={styles.tableCellLeftAligned}
+								></Text>
+							</View>
+							<View style={styles.tableCol2}>
+								<Text style={styles.tableCell}></Text>
+							</View>
+							<View style={styles.tableCol3}>
+								<Image src={lastfallSrc} style={styles.image} />
+							</View>
+							<View style={styles.tableCol4}>
+								<Text
+									style={styles.tableCellLeftAligned}
+								></Text>
+							</View>
+						</View>
+						<View style={styles.tableRow}>
+							<View style={styles.tableCol1}>
+								<Text style={styles.tableCellLeftAligned}>
 									Kraft in z-Achse
 								</Text>
 							</View>
 							<View style={styles.tableCol2}>
-								<Text style={styles.tableCell}>Fz</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									Fz
+								</Text>
 							</View>
 							<View style={styles.tableCol3}>
-								<Text style={styles.tableCell}>{kraftInZ}</Text>
+								<Text style={styles.tableCellRightAligned}>
+									{kraftInZ}
+								</Text>
 							</View>
 							<View style={styles.tableCol4}>
-								<Text style={styles.tableCell}>N</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									N
+								</Text>
 							</View>
 						</View>
 						<View style={styles.tableRow}>
@@ -349,13 +393,19 @@ export function Report({
 								</Text>
 							</View>
 							<View style={styles.tableCol2}>
-								<Text style={styles.tableCell}>Fy</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									Fy
+								</Text>
 							</View>
 							<View style={styles.tableCol3}>
-								<Text style={styles.tableCell}>{kraftInY}</Text>
+								<Text style={styles.tableCellRightAligned}>
+									{kraftInY}
+								</Text>
 							</View>
 							<View style={styles.tableCol4}>
-								<Text style={styles.tableCell}>N</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									N
+								</Text>
 							</View>
 						</View>
 						<View style={styles.tableRow}>
@@ -365,42 +415,27 @@ export function Report({
 								</Text>
 							</View>
 							<View style={styles.tableCol2}>
-								<Text style={styles.tableCell}>Mz</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									Mz
+								</Text>
 							</View>
 							<View style={styles.tableCol3}>
-								<Text style={styles.tableCell}>
+								<Text style={styles.tableCellRightAligned}>
 									{drehmoment}
 								</Text>
 							</View>
 							<View style={styles.tableCol4}>
-								<Text style={styles.tableCell}>Nm</Text>
+								<Text style={styles.tableCellLeftAligned}>
+									Nm
+								</Text>
 							</View>
 						</View>
 					</View>
 				</View>
-				{/* Ausgabe Table */}
+				{/* Berechnete Eigenschaften */}
+				<Text style={styles.h2}>Berechnete Eigenschaften</Text>
 				<View style={styles.tableContainer}>
 					<View style={styles.table}>
-						<View style={styles.tableRow}>
-							<View style={styles.tableCol1}>
-								<Text style={styles.tableCellHeaderLeftAligned}>
-									Bezeichnung
-								</Text>
-							</View>
-							<View style={styles.tableCol2}>
-								<Text style={styles.tableCellHeader}>
-									Symbol
-								</Text>
-							</View>
-							<View style={styles.tableCol3}>
-								<Text style={styles.tableCellHeader}>Wert</Text>
-							</View>
-							<View style={styles.tableCol4}>
-								<Text style={styles.tableCellHeader}>
-									Einheit
-								</Text>
-							</View>
-						</View>
 						{berechneteGroessen.map((item, index) => {
 							if (item.isComputable) {
 								return (
@@ -418,12 +453,20 @@ export function Report({
 											</Text>
 										</View>
 										<View style={styles.tableCol2}>
-											<Text style={styles.tableCell}>
+											<Text
+												style={
+													styles.tableCellLeftAligned
+												}
+											>
 												{item.symbol}
 											</Text>
 										</View>
 										<View style={styles.tableCol3}>
-											<Text style={styles.tableCell}>
+											<Text
+												style={
+													styles.tableCellRightAligned
+												}
+											>
 												{displayWithFixedDecimalPlaces(
 													item.value,
 													nachkommastellen
@@ -431,7 +474,11 @@ export function Report({
 											</Text>
 										</View>
 										<View style={styles.tableCol4}>
-											<Text style={styles.tableCell}>
+											<Text
+												style={
+													styles.tableCellLeftAligned
+												}
+											>
 												{item.unit}
 											</Text>
 										</View>
@@ -442,7 +489,7 @@ export function Report({
 						})}
 					</View>
 				</View>
-				<Text style={styles.date}>{currentDateString}</Text>
+				<Text style={styles.date}>Erstellt am {currentDateString}</Text>
 			</Page>
 		</Document>
 	);

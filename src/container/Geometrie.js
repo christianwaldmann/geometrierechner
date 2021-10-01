@@ -87,7 +87,7 @@ function Geometrie({
 					);
 				})}
 			</DropdownSelectionLabeledImage>
-			<div className="flex items-center justify-end w-full mb-6 -mt-6 sm:-mt-12">
+			<div className="flex items-center justify-end w-full mb-6 sm:-mt-12">
 				<label className="text-sm text-gray-500">Längeneinheit</label>
 				<DropdownSelection
 					className="w-20 ml-2"

@@ -102,10 +102,11 @@ export default function Ausgabe({
 					emodul={emodul}
 					gmodul={gmodul}
 					lengthUnitEingabe={lengthUnitEingabe}
-					lengthUnitAusgabe={lengthUnitAusgabe}
 					berechneteGroessen={berechneteGroessen}
 					nachkommastellen={nachkommastellen}
 					currentQuerschnittObject={currentQuerschnittObject}
+					lastfallName={currentLastfallObject.name}
+					lastfallSrc={currentLastfallObject.png_src}
 				/>
 			</div>
 		</div>
