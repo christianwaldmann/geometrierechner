@@ -43,6 +43,7 @@ function Belastung({
 		<div className="sm:h-70">
 			<SectionHeader className="sm:border-t">Belastung</SectionHeader>
 			<DropdownSelectionLabeledImage
+				id="lastfall"
 				className="mt-4"
 				label="Lastfall"
 				src={lastfallSvgSrc}
@@ -60,6 +61,7 @@ function Belastung({
 			</DropdownSelectionLabeledImage>
 			{enableKraftInZ && (
 				<InputLabeled
+					id="kraftInZ"
 					label="Kraft in z-Achse"
 					symbol="Fz"
 					value={kraftInZ}
@@ -70,6 +72,7 @@ function Belastung({
 			)}
 			{enableKraftInY && (
 				<InputLabeled
+					id="kraftInY"
 					label="Kraft in y-Achse"
 					symbol="Fy"
 					value={kraftInY}
@@ -80,6 +83,7 @@ function Belastung({
 			)}
 			{enableDrehmoment && (
 				<InputLabeled
+					id="drehmoment"
 					label="Drehmoment"
 					symbol="Mz"
 					value={drehmoment}

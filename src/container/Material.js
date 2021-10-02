@@ -67,6 +67,7 @@ function Material({
 			</div>
 			<div className="-mt-1">
 				<InputLabeled
+					id="dichte"
 					label="Dichte"
 					symbol="ρ"
 					value={dichte}
@@ -75,6 +76,7 @@ function Material({
 					unit="kg/dm³"
 				/>
 				<InputLabeled
+					id="emodul"
 					label="E-Modul"
 					symbol="E"
 					value={emodul}
@@ -83,6 +85,7 @@ function Material({
 					unit="N/mm²"
 				/>
 				<InputLabeled
+					id="gmodul"
 					label="G-Modul"
 					symbol="G"
 					value={gmodul}

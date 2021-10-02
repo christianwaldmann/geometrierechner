@@ -2,6 +2,7 @@ import React from "react";
 import DropdownSelection from "./DropdownSelection";
 
 export default function DropdownSelectionLabeledImage({
+	id,
 	label,
 	src,
 	alt,
@@ -12,7 +13,10 @@ export default function DropdownSelectionLabeledImage({
 	return (
 		<>
 			<div className="flex">
-				<label className="flex items-center w-1/2 pt-2 sm:w-1/3 sm:inline-block sm:pt-1">
+				<label
+					className="flex items-center w-1/2 pt-2 sm:w-1/3 sm:inline-block sm:pt-1"
+					htmlFor={id}
+				>
 					{label}
 				</label>
 				<div className="w-1/2 sm:w-2/3">
@@ -22,6 +26,7 @@ export default function DropdownSelectionLabeledImage({
 						</div>
 						<div className="w-full ml-auto sm:w-1/2">
 							<DropdownSelection
+								id={id}
 								value={value}
 								className="w-full"
 								onChange={onChange}

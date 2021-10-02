@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function DropdownSelection({
+	id,
 	value,
 	onChange,
 	className,
@@ -12,6 +13,7 @@ export default function DropdownSelection({
 			className={`relative inline-block my-1 text-sm border border-gray-150 rounded focus-within:ring-1 focus-within:ring-indigo-400 focus-within:border-indigo-400 ${className}`}
 		>
 			<select
+				id={id}
 				value={value}
 				className="block w-full py-2 pl-3 pr-2 text-gray-700 bg-gray-100 rounded appearance-none cursor-pointer focus:outline-none sm:py-1"
 				onChange={onChange}

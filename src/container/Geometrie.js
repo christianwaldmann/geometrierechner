@@ -72,6 +72,7 @@ function Geometrie({
 		<div className="sm:h-94">
 			<SectionHeader>Geometrie</SectionHeader>
 			<DropdownSelectionLabeledImage
+				id="querschnitt"
 				className="mt-4"
 				label="Querschnitt"
 				src={querschnittSvgSrc}
@@ -105,6 +106,7 @@ function Geometrie({
 						return (
 							<InputLabeled
 								key={index}
+								id={item.intern}
 								label={item.bezeichnung}
 								symbol={item.symbol}
 								value={parameters[index]}
