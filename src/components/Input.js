@@ -21,6 +21,7 @@ export default function Input({
 				value={value}
 				onChange={onChange}
 				id={id}
+				data-testid={id}
 			/>
 			<span className="absolute inset-y-0 right-0 flex items-center pr-3 font-semibold text-gray-600 cursor-default pointer-events-none w-14 sm:w-16 sm:pr-0">
 				{unit}

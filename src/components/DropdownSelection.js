@@ -14,6 +14,7 @@ export default function DropdownSelection({
 		>
 			<select
 				id={id}
+				data-testid={id}
 				value={value}
 				className="block w-full py-2 pl-3 pr-2 text-gray-700 bg-gray-100 rounded appearance-none cursor-pointer focus:outline-none sm:py-1"
 				onChange={onChange}
