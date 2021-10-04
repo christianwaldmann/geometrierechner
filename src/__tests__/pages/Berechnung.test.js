@@ -1,7 +1,7 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import Berechnung from "../../pages/Berechnung";
-import { BrowserRouter } from "react-router-dom";
 
 test("renders the Berechnung page", () => {
 	const { getByText, getByTestId } = render(<Berechnung />);
@@ -48,7 +48,13 @@ test("renders the Berechnung page", () => {
 });
 
 test("calculates the correct values for Querschnitt Kreis", () => {
-	const { getByText, getByTestId } = render(<Berechnung />);
+	const { getByText, getByTestId, getByLabelText } = render(<Berechnung />);
 
-	fireEvent.change(getByTestId("p1"), { target: { value: 1 } }); // TODO: hier weitermachen
+	//fireEvent.change(getByTestId("p1"), { target: { value: 1 } });
+	//await waitFor(() => expect(getByText("0,79")).toBeTruthy())
+
+	const input = screen.getByLabelText("Außen-Ø");
+	userEvent.type(input, "1");
+
+	expect(getByText("0,79")).toBeTruthy();
 });

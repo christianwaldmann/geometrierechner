@@ -8,7 +8,6 @@
 		"@react-pdf/renderer": "^2.0.19",
 		"@testing-library/jest-dom": "^5.11.4",
 		"@testing-library/react": "^11.1.0",
-		"@testing-library/user-event": "^12.1.10",
 		"better-react-mathjax": "^1.0.3",
 		"file-saver": "^2.0.5",
 		"react": "^17.0.2",
@@ -45,6 +44,8 @@
 		]
 	},
 	"devDependencies": {
+		"@testing-library/dom": "^8.7.1",
+		"@testing-library/user-event": "^12.8.3",
 		"autoprefixer": "^9.8.6",
 		"gh-pages": "^3.2.3",
 		"postcss": "^7.0.36",
