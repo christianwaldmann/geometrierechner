@@ -2,7 +2,7 @@ import Ausgabe from "../container/Ausgabe";
 import { UNIT_MM } from "../Constants";
 import React, { useState } from "react";
 import { getLengthUnitFactor } from "../util";
-import { querschnitte } from "../Querschnitte";
+import { querschnitte } from "../querschnitte/Querschnitte";
 import { lastfaelle } from "../Lastfaelle";
 import { GeometrieMemoized } from "../container/Geometrie";
 import { MaterialMemoized } from "../container/Material";

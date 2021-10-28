@@ -1,5 +1,5 @@
 import React from "react";
-import { querschnitte } from "../Querschnitte";
+import { querschnitte } from "../querschnitte/Querschnitte";
 import { UNIT_MM, UNIT_CM, UNIT_DM, UNIT_M } from "../Constants";
 import InputLabeled from "../components/InputLabeled";
 import DropdownSelection from "../components/DropdownSelection";

@@ -1,4 +1,4 @@
-import { querschnitte } from "../Querschnitte";
+import { querschnitte } from "../querschnitte/Querschnitte";
 import { MathJax } from "better-react-mathjax";
 import { lastfaelle } from "../Lastfaelle";
 
