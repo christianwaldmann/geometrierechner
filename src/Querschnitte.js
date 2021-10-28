@@ -277,193 +277,6 @@ const kreis = {
 			requires: ["p1"],
 		},
 	],
-	// lastfaelle: [
-	// 	{
-	// 		bezeichnung: "Balken einseitig",
-	// 		svg_src: "assets/lastfall_balken_einseitig.svg",
-	// 		png_src: "assets/lastfall_balken_einseitig.png",
-	// 		ausgabe: [
-	// 			{
-	// 				bezeichnung: "Biege&shy;spannung",
-	// 				symbol: "σ Bx",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						(kraftInY * p6) /
-	// 						((PI_32 * (Math.pow(p1, 4) - Math.pow(p2, 4))) /
-	// 							p1) /
-	// 						1000000
-	// 					);
-	// 				},
-	// 				formelTex: "\\(σ Bx = \\frac{Fy \\cdot l}{Wax}\\)",
-	// 				unitHoch: "",
-	// 				isNotLengthUnit: true,
-	// 				unit: "N/mm²",
-	// 				requires: ["p1", "p6", "kraftInY"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Durchbiegung",
-	// 				symbol: "fy",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						(kraftInY * Math.pow(p6, 3)) /
-	// 						(3 *
-	// 							emodul *
-	// 							1000000 *
-	// 							(PI_64 * (Math.pow(p1, 4) - Math.pow(p2, 4)))) /
-	// 						lengthUnitFactor
-	// 					);
-	// 				},
-	// 				formelTex: "\\(fy = \\frac{Fy \\cdot l^2}{3E \\cdot I}\\)",
-	// 				unitHoch: "",
-	// 				requires: ["p1", "p6", "kraftInY", "emodul"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Zugspannung",
-	// 				symbol: "σ z",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						kraftInZ / (PI_4 * (p1 * p1 - p2 * p2)) / 1000000
-	// 					);
-	// 				},
-	// 				formelTex: "\\(σ z = \\frac{Fz}{A}\\)",
-	// 				unitHoch: "",
-	// 				isNotLengthUnit: true,
-	// 				unit: "N/mm²",
-	// 				requires: ["p1", "kraftInZ"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Dehnung",
-	// 				symbol: "Δ z",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						((kraftInZ / (PI_4 * (p1 * p1 - p2 * p2))) * p6) /
-	// 						(emodul * 1000000) /
-	// 						lengthUnitFactor
-	// 					);
-	// 				},
-	// 				formelTex: "\\(Δ z = \\frac{σ z}{E \\cdot l}\\)",
-	// 				unitHoch: "",
-	// 				requires: ["p1", "p6", "kraftInZ", "emodul"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Torsions&shy;spannung",
-	// 				symbol: "τ",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY,
-	// 					drehmoment
-	// 				) {
-	// 					return (
-	// 						drehmoment /
-	// 						((PI_16 * (Math.pow(p1, 4) - Math.pow(p2, 4))) /
-	// 							p1) /
-	// 						1000000
-	// 					);
-	// 				},
-	// 				formelTex: "\\(τ = \\frac{Mz}{Wp}\\)",
-	// 				unitHoch: "",
-	// 				isNotLengthUnit: true,
-	// 				unit: "N/mm²",
-	// 				requires: ["p1", "drehmoment"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Verdrehwinkel",
-	// 				symbol: "φ",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY,
-	// 					drehmoment
-	// 				) {
-	// 					return (
-	// 						((drehmoment * p6) /
-	// 							(PI_32 *
-	// 								(Math.pow(p1, 4) - Math.pow(p2, 4)) *
-	// 								gmodul *
-	// 								1000000)) *
-	// 						FACTOR_RAD_TO_DEG
-	// 					);
-	// 				},
-	// 				formelTex: "\\(φ = \\frac{Mz \\cdot l}{Ip \\cdot G}\\)",
-	// 				unitHoch: "",
-	// 				isNotLengthUnit: true,
-	// 				unit: "°",
-	// 				requires: ["p1", "p6", "drehmoment", "gmodul"],
-	// 			},
-	// 		],
-	// 	},
-	// ],
 };
 
 const rechteck = {
@@ -494,7 +307,7 @@ const rechteck = {
 				setP6
 			) {
 				const newValue = parseFloat(e.target.value);
-				if (newValue < p2) {
+				if (newValue < 2 * p5) {
 					// alert("b > B nicht erlaubt");
 					return;
 				}
@@ -503,33 +316,6 @@ const rechteck = {
 		},
 		{
 			intern: "p2",
-			bezeichnung: "Innere Breite",
-			symbol: "b",
-			onChange: function updateOtherParameters(
-				e,
-				p1,
-				p2,
-				p3,
-				p4,
-				p5,
-				p6,
-				setP1,
-				setP2,
-				setP3,
-				setP4,
-				setP5,
-				setP6
-			) {
-				const newValue = parseFloat(e.target.value);
-				if (newValue > p1) {
-					// alert("b > B nicht erlaubt");
-					return;
-				}
-				onParameterChange(e, setP2);
-			},
-		},
-		{
-			intern: "p3",
 			bezeichnung: "Höhe",
 			symbol: "H",
 			onChange: function updateOtherParameters(
@@ -548,39 +334,20 @@ const rechteck = {
 				setP6
 			) {
 				const newValue = parseFloat(e.target.value);
-				if (newValue < p4) {
+				if (newValue < 2 * p5) {
 					// alert("h > H nicht erlaubt");
 					return;
 				}
-				onParameterChange(e, setP3);
+				onParameterChange(e, setP2);
 			},
 		},
 		{
+			intern: "p3",
+			skip: true,
+		},
+		{
 			intern: "p4",
-			bezeichnung: "Innere Höhe",
-			symbol: "h",
-			onChange: function updateOtherParameters(
-				e,
-				p1,
-				p2,
-				p3,
-				p4,
-				p5,
-				p6,
-				setP1,
-				setP2,
-				setP3,
-				setP4,
-				setP5,
-				setP6
-			) {
-				const newValue = parseFloat(e.target.value);
-				if (newValue > p3) {
-					// alert("h > H nicht erlaubt");
-					return;
-				}
-				onParameterChange(e, setP4);
-			},
+			skip: true,
 		},
 		{
 			intern: "p5",
@@ -602,14 +369,10 @@ const rechteck = {
 				setP6
 			) {
 				const newValue = parseFloat(e.target.value);
-				if (2 * newValue > p1 || 2 * newValue > p3) {
+				if (2 * newValue > p1 || 2 * newValue > p2) {
 					return;
 				}
 				onParameterChange(e, setP5);
-				if (e.target.checkValidity()) {
-					setP2(p1 - newValue * 2);
-					setP4(p3 - newValue * 2);
-				}
 			},
 		},
 		{
@@ -642,72 +405,68 @@ const rechteck = {
 			formel: function calculate({
 				p1,
 				p2,
-				p3,
-				p4,
+				p5,
 				lengthUnitFactor,
 				setFlaeche,
 			}) {
-				const flaeche = p1 * p3 - p2 * p4;
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
+				const flaeche = p1 * p2 - b * h;
 				setFlaeche(flaeche);
 				return flaeche / (lengthUnitFactor * lengthUnitFactor);
 			},
 			formelTex: "\\(A = B \\cdot H - b \\cdot h\\)",
 			unitHoch: "²",
-			requires: ["p1", "p3"],
+			requires: ["p1", "p2"],
 		},
 		{
 			bezeichnung: "Umfang",
 			symbol: "U",
-			formel: function calculate({ p1, p3, lengthUnitFactor }) {
-				return (2 * p1 + 2 * p3) / lengthUnitFactor;
+			formel: function calculate({ p1, p2, lengthUnitFactor }) {
+				return (2 * p1 + 2 * p2) / lengthUnitFactor;
 			},
 			formelTex: "\\(U = 2 B + 2 H\\)",
 			unitHoch: "",
-			requires: ["p1", "p3"],
+			requires: ["p1", "p2"],
 		},
 		{
 			bezeichnung: "Volumen",
 			symbol: "V",
-			formel: function calculate({
-				p1,
-				p2,
-				p3,
-				p4,
-				p6,
-				lengthUnitFactor,
-			}) {
-				return (
-					((p1 * p3 - p2 * p4) * p6) / Math.pow(lengthUnitFactor, 3)
-				);
+			formel: function calculate({ p1, p2, p5, p6, lengthUnitFactor }) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
+				return ((p1 * p2 - b * h) * p6) / Math.pow(lengthUnitFactor, 3);
 			},
 			formelTex: "\\(V = (B \\cdot H - b \\cdot h) \\cdot l\\)",
 			unitHoch: "³",
-			requires: ["p1", "p3", "p6"],
+			requires: ["p1", "p2", "p6"],
 		},
 		{
 			bezeichnung: "Masse",
 			symbol: "m",
-			formel: function calculate({ p1, p2, p3, p4, p6, dichte }) {
-				return (p1 * p3 - p2 * p4) * p6 * dichte * 1000;
+			formel: function calculate({ p1, p2, p5, p6, dichte }) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
+				return (p1 * p2 - b * h) * p6 * dichte * 1000;
 			},
 			formelTex: "\\(m = V \\cdot ρ\\)",
 			unitHoch: "",
 			isNotLengthUnit: true,
 			unit: "kg",
-			requires: ["p1", "p3", "p6", "dichte"],
+			requires: ["p1", "p2", "p6", "dichte"],
 		},
 		{
 			bezeichnung: "Eckenmaße (Diagonale)",
 			symbol: "e",
-			formel: function calculate({ p1, p3, lengthUnitFactor }) {
+			formel: function calculate({ p1, p2, lengthUnitFactor }) {
 				return (
-					Math.sqrt(Math.pow(p1, 2) + Math.pow(p3, 2)) /
+					Math.sqrt(Math.pow(p1, 2) + Math.pow(p2, 2)) /
 					lengthUnitFactor
 				);
 			},
 			formelTex: "\\(e = \\sqrt{B^2 + H^2}\\)",
 			unitHoch: "",
-			requires: ["p1", "p3"],
+			requires: ["p1", "p2"],
 		},
 		{
 			bezeichnung: "Axiales Widerstands&shy;moment",
@@ -715,19 +474,20 @@ const rechteck = {
 			formel: function calculate({
 				p1,
 				p2,
-				p3,
-				p4,
+				p5,
 				lengthUnitFactor,
 				setAxialesWiderstandsmoment,
 			}) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
 				const axialesWiderstandsmoment =
-					(p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) / (6 * p3);
+					(p1 * Math.pow(p2, 3) - b * Math.pow(h, 3)) / (6 * p2);
 				setAxialesWiderstandsmoment(axialesWiderstandsmoment);
 				return axialesWiderstandsmoment / Math.pow(lengthUnitFactor, 3);
 			},
 			formelTex: "\\(Wx = \\frac{B \\cdot H^3 - b \\cdot h^3}{6 H}\\)",
 			unitHoch: "³",
-			requires: ["p1", "p3"],
+			requires: ["p1", "p2"],
 		},
 		{
 			bezeichnung: "Axiales Trägheits&shy;moment",
@@ -735,243 +495,54 @@ const rechteck = {
 			formel: function calculate({
 				p1,
 				p2,
-				p3,
-				p4,
+				p5,
 				lengthUnitFactor,
 				setAxialesTraegheitsmoment,
 			}) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
 				const axialesTraegheitsmoment =
-					(p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) / 12;
+					(p1 * Math.pow(p2, 3) - b * Math.pow(h, 3)) / 12;
 				setAxialesTraegheitsmoment(axialesTraegheitsmoment);
 				return axialesTraegheitsmoment / Math.pow(lengthUnitFactor, 4);
 			},
 			formelTex: "\\(Ix = \\frac{B \\cdot H^3 - b \\cdot h^3}{12}\\)",
 			unitHoch: "⁴",
-			requires: ["p1", "p3"],
+			requires: ["p1", "p2"],
 		},
 		{
 			bezeichnung: "Axiales Widerstands&shy;moment",
 			symbol: "Wy",
-			formel: function calculate({ p1, p2, p3, p4, lengthUnitFactor }) {
+			formel: function calculate({ p1, p2, p5, lengthUnitFactor }) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
 				return (
-					(p3 * Math.pow(p1, 3) - p4 * Math.pow(p2, 3)) /
+					(p2 * Math.pow(p1, 3) - h * Math.pow(b, 3)) /
 					(6 * p1) /
 					Math.pow(lengthUnitFactor, 3)
 				);
 			},
 			formelTex: "\\(Wy = \\frac{H \\cdot B^3 - h \\cdot b^3}{6 B}\\)",
 			unitHoch: "³",
-			requires: ["p1", "p3"],
+			requires: ["p1", "p2"],
 		},
 		{
 			bezeichnung: "Axiales Trägheits&shy;moment",
 			symbol: "Iy",
-			formel: function calculate({ p1, p2, p3, p4, lengthUnitFactor }) {
+			formel: function calculate({ p1, p2, p5, lengthUnitFactor }) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
 				return (
-					(p3 * Math.pow(p1, 3) - p4 * Math.pow(p2, 3)) /
+					(p2 * Math.pow(p1, 3) - h * Math.pow(b, 3)) /
 					12 /
 					Math.pow(lengthUnitFactor, 4)
 				);
 			},
 			formelTex: "\\(Iy = \\frac{H \\cdot B^3 - h \\cdot b^3}{12}\\)",
 			unitHoch: "⁴",
-			requires: ["p1", "p3"],
+			requires: ["p1", "p2"],
 		},
 	],
-	// lastfaelle: [
-	// 	{
-	// 		bezeichnung: "Balken einseitig",
-	// 		svg_src: "assets/lastfall_balken_einseitig.svg",
-	// 		png_src: "assets/lastfall_balken_einseitig.png",
-	// 		ausgabe: [
-	// 			{
-	// 				bezeichnung: "Biege&shy;spannung",
-	// 				symbol: "σ Bx",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						(kraftInY * p6) /
-	// 						((p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) /
-	// 							(6 * p3)) /
-	// 						1000000
-	// 					);
-	// 				},
-	// 				formelTex: "\\(σ Bx = \\frac{Fy \\cdot l}{Wx}\\)",
-	// 				unitHoch: "",
-	// 				isNotLengthUnit: true,
-	// 				unit: "N/mm²",
-	// 				requires: ["p1", "p3", "p6", "kraftInY"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Durchbiegung",
-	// 				symbol: "fy",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						(kraftInY * Math.pow(p6, 3)) /
-	// 						(3 *
-	// 							emodul *
-	// 							1000000 *
-	// 							((p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) /
-	// 								12)) /
-	// 						lengthUnitFactor
-	// 					);
-	// 				},
-	// 				formelTex: "\\(fy = \\frac{Fy \\cdot l^2}{3E \\cdot Ix}\\)",
-	// 				unitHoch: "",
-	// 				requires: ["p1", "p3", "p6", "kraftInY", "emodul"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Zugspannung",
-	// 				symbol: "σ z",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						(kraftInZ / (p1 * p3 - p2 * p4)) *
-	// 						Math.pow(lengthUnitFactor, 2)
-	// 					);
-	// 				},
-	// 				formelTex: "\\(σ z = \\frac{Fz}{A}\\)",
-	// 				unitHoch: "",
-	// 				isNotLengthUnit: true,
-	// 				unit: "N/mm²",
-	// 				requires: ["p1", "p3", "kraftInZ"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Dehnung",
-	// 				symbol: "Δ z",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						((kraftInZ / (p1 * p3 - p2 * p4)) * p6) /
-	// 						(emodul * 1000000) /
-	// 						lengthUnitFactor
-	// 					);
-	// 				},
-	// 				formelTex: "\\(Δ z = \\frac{σ z}{E \\cdot l}\\)",
-	// 				unitHoch: "",
-	// 				requires: ["p1", "p3", "p6", "kraftInZ", "emodul"],
-	// 			},
-	// 		],
-	// 	},
-	// 	{
-	// 		bezeichnung: "Balken beidseitig",
-	// 		svg_src: "assets/lastfall_balken_beidseitig.svg",
-	// 		png_src: "assets/lastfall_balken_beidseitig.png",
-	// 		ausgabe: [
-	// 			{
-	// 				bezeichnung: "Biege&shy;spannung",
-	// 				symbol: "σ Bx",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						(0.25 * kraftInY * p6) /
-	// 						((p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) /
-	// 							(6 * p3)) /
-	// 						1000000
-	// 					);
-	// 				},
-	// 				formelTex:
-	// 					"\\(σ Bx = \\frac{\\frac{Fy}{2} \\cdot \\frac{l}{2}}{Wx}\\)",
-	// 				unitHoch: "",
-	// 				isNotLengthUnit: true,
-	// 				unit: "N/mm²",
-	// 				requires: ["p1", "p3", "p6", "kraftInY"],
-	// 			},
-	// 			{
-	// 				bezeichnung: "Durchbiegung",
-	// 				symbol: "fy",
-	// 				formel: function calculate(
-	// 					p1,
-	// 					p2,
-	// 					p3,
-	// 					p4,
-	// 					p5,
-	// 					p6,
-	// 					lengthUnitFactor,
-	// 					dichte,
-	// 					emodul,
-	// 					gmodul,
-	// 					kraftInZ,
-	// 					kraftInY
-	// 				) {
-	// 					return (
-	// 						(kraftInY * Math.pow(p6, 3)) /
-	// 						(3 *
-	// 							emodul *
-	// 							1000000 *
-	// 							((p1 * Math.pow(p3, 3) - p2 * Math.pow(p4, 3)) /
-	// 								12)) /
-	// 						lengthUnitFactor
-	// 					);
-	// 				},
-	// 				formelTex: "\\(fy = \\frac{Fy \\cdot l^2}{3E \\cdot Ix}\\)",
-	// 				unitHoch: "",
-	// 				requires: ["p1", "p3", "p6", "kraftInY", "emodul"],
-	// 			},
-	// 		],
-	// 	},
-	// ],
 };
 
 export const querschnitte = [kreis, rechteck].map((querschnitt) => {
