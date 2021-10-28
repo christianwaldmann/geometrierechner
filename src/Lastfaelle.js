@@ -53,12 +53,8 @@ export const lastfaelle = [
 			{
 				bezeichnung: "Zugspannung",
 				symbol: "σ z",
-				formel: function calculate({
-					lengthUnitFactor,
-					kraftInZ,
-					flaeche,
-				}) {
-					return (kraftInZ / flaeche) * Math.pow(lengthUnitFactor, 2);
+				formel: function calculate({ kraftInZ, flaeche }) {
+					return kraftInZ / flaeche / 1000000;
 				},
 				formelTex: "\\(σ z = \\frac{Fz}{A}\\)",
 				unitHoch: "",
