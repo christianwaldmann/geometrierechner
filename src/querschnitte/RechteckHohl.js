@@ -1,9 +1,9 @@
 import { onParameterChange } from "./common.js";
 
-export const rechteck = {
-	name: "Rechteck",
-	svg_src: "assets/rechteck.svg",
-	png_src: "assets/rechteck.png",
+export const rechteckHohl = {
+	name: "Rechteck (hohl)",
+	svg_src: "assets/rechteckHohl.svg",
+	png_src: "assets/rechteckHohl.png",
 	enableKraftInZ: true,
 	enableKraftInY: true,
 	enableDrehmoment: false,
@@ -72,7 +72,29 @@ export const rechteck = {
 		},
 		{
 			intern: "p5",
-			skip: true,
+			bezeichnung: "Wandstärke",
+			symbol: "s",
+			onChange: function updateOtherParameters(
+				e,
+				p1,
+				p2,
+				p3,
+				p4,
+				p5,
+				p6,
+				setP1,
+				setP2,
+				setP3,
+				setP4,
+				setP5,
+				setP6
+			) {
+				const newValue = parseFloat(e.target.value);
+				if (2 * newValue > p1 || 2 * newValue > p2) {
+					return;
+				}
+				onParameterChange(e, setP5);
+			},
 		},
 		{
 			intern: "p6",
@@ -104,16 +126,19 @@ export const rechteck = {
 			formel: function calculate({
 				p1,
 				p2,
+				p5,
 				lengthUnitFactor,
 				setFlaeche,
 			}) {
-				const flaeche = p1 * p2;
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
+				const flaeche = p1 * p2 - b * h;
 				setFlaeche(flaeche);
 				return flaeche / (lengthUnitFactor * lengthUnitFactor);
 			},
-			formelTex: "\\(A = B \\cdot H\\)",
+			formelTex: "\\(A = B \\cdot H - b \\cdot h\\)",
 			unitHoch: "²",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 		{
 			bezeichnung: "Umfang",
@@ -128,24 +153,28 @@ export const rechteck = {
 		{
 			bezeichnung: "Volumen",
 			symbol: "V",
-			formel: function calculate({ p1, p2, p6, lengthUnitFactor }) {
-				return (p1 * p2 * p6) / Math.pow(lengthUnitFactor, 3);
+			formel: function calculate({ p1, p2, p5, p6, lengthUnitFactor }) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
+				return ((p1 * p2 - b * h) * p6) / Math.pow(lengthUnitFactor, 3);
 			},
-			formelTex: "\\(V = (B \\cdot H) \\cdot l\\)",
+			formelTex: "\\(V = (B \\cdot H - b \\cdot h) \\cdot l\\)",
 			unitHoch: "³",
-			requires: ["p1", "p2", "p6"],
+			requires: ["p1", "p2", "p5", "p6"],
 		},
 		{
 			bezeichnung: "Masse",
 			symbol: "m",
-			formel: function calculate({ p1, p2, p6, dichte }) {
-				return p1 * p2 * p6 * dichte * 1000;
+			formel: function calculate({ p1, p2, p5, p6, dichte }) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
+				return (p1 * p2 - b * h) * p6 * dichte * 1000;
 			},
 			formelTex: "\\(m = V \\cdot ρ\\)",
 			unitHoch: "",
 			isNotLengthUnit: true,
 			unit: "kg",
-			requires: ["p1", "p2", "p6", "dichte"],
+			requires: ["p1", "p2", "p5", "p6", "dichte"],
 		},
 		{
 			bezeichnung: "Eckenmaße (Diagonale)",
@@ -166,17 +195,20 @@ export const rechteck = {
 			formel: function calculate({
 				p1,
 				p2,
+				p5,
 				lengthUnitFactor,
 				setAxialesWiderstandsmoment,
 			}) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
 				const axialesWiderstandsmoment =
-					(p1 * Math.pow(p2, 3)) / (6 * p2);
+					(p1 * Math.pow(p2, 3) - b * Math.pow(h, 3)) / (6 * p2);
 				setAxialesWiderstandsmoment(axialesWiderstandsmoment);
 				return axialesWiderstandsmoment / Math.pow(lengthUnitFactor, 3);
 			},
-			formelTex: "\\(Wx = \\frac{B \\cdot H^3}{6 H}\\)",
+			formelTex: "\\(Wx = \\frac{B \\cdot H^3 - b \\cdot h^3}{6 H}\\)",
 			unitHoch: "³",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 		{
 			bezeichnung: "Axiales Trägheits&shy;moment",
@@ -184,42 +216,52 @@ export const rechteck = {
 			formel: function calculate({
 				p1,
 				p2,
+				p5,
 				lengthUnitFactor,
 				setAxialesTraegheitsmoment,
 			}) {
-				const axialesTraegheitsmoment = (p1 * Math.pow(p2, 3)) / 12;
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
+				const axialesTraegheitsmoment =
+					(p1 * Math.pow(p2, 3) - b * Math.pow(h, 3)) / 12;
 				setAxialesTraegheitsmoment(axialesTraegheitsmoment);
 				return axialesTraegheitsmoment / Math.pow(lengthUnitFactor, 4);
 			},
-			formelTex: "\\(Ix = \\frac{B \\cdot H^3}{12}\\)",
+			formelTex: "\\(Ix = \\frac{B \\cdot H^3 - b \\cdot h^3}{12}\\)",
 			unitHoch: "⁴",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 		{
 			bezeichnung: "Axiales Widerstands&shy;moment",
 			symbol: "Wy",
-			formel: function calculate({ p1, p2, lengthUnitFactor }) {
+			formel: function calculate({ p1, p2, p5, lengthUnitFactor }) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
 				return (
-					(p2 * Math.pow(p1, 3)) /
+					(p2 * Math.pow(p1, 3) - h * Math.pow(b, 3)) /
 					(6 * p1) /
 					Math.pow(lengthUnitFactor, 3)
 				);
 			},
-			formelTex: "\\(Wy = \\frac{H \\cdot B^3}{6 B}\\)",
+			formelTex: "\\(Wy = \\frac{H \\cdot B^3 - h \\cdot b^3}{6 B}\\)",
 			unitHoch: "³",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 		{
 			bezeichnung: "Axiales Trägheits&shy;moment",
 			symbol: "Iy",
-			formel: function calculate({ p1, p2, lengthUnitFactor }) {
+			formel: function calculate({ p1, p2, p5, lengthUnitFactor }) {
+				const b = p1 - 2 * p5;
+				const h = p2 - 2 * p5;
 				return (
-					(p2 * Math.pow(p1, 3)) / 12 / Math.pow(lengthUnitFactor, 4)
+					(p2 * Math.pow(p1, 3) - h * Math.pow(b, 3)) /
+					12 /
+					Math.pow(lengthUnitFactor, 4)
 				);
 			},
-			formelTex: "\\(Iy = \\frac{H \\cdot B^3}{12}\\)",
+			formelTex: "\\(Iy = \\frac{H \\cdot B^3 - h \\cdot b^3}{12}\\)",
 			unitHoch: "⁴",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 	],
 };
