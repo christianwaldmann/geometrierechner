@@ -69,7 +69,7 @@ function Geometrie({
 	const parameters = [p1, p2, p3, p4, p5, p6];
 
 	return (
-		<div className="sm:h-94">
+		<div className="sm:h-80">
 			<SectionHeader>Geometrie</SectionHeader>
 			<DropdownSelectionLabeledImage
 				id="querschnitt"

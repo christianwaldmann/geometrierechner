@@ -40,7 +40,7 @@ function Belastung({
 	};
 
 	return (
-		<div className="sm:h-70">
+		<div className="sm:h-80">
 			<SectionHeader className="sm:border-t">Belastung</SectionHeader>
 			<DropdownSelectionLabeledImage
 				id="lastfall"
