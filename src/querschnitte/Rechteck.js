@@ -138,7 +138,7 @@ export const rechteck = {
 			},
 			formelTex: "\\(A = B \\cdot H - b \\cdot h\\)",
 			unitHoch: "²",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 		{
 			bezeichnung: "Umfang",
@@ -160,7 +160,7 @@ export const rechteck = {
 			},
 			formelTex: "\\(V = (B \\cdot H - b \\cdot h) \\cdot l\\)",
 			unitHoch: "³",
-			requires: ["p1", "p2", "p6"],
+			requires: ["p1", "p2", "p5", "p6"],
 		},
 		{
 			bezeichnung: "Masse",
@@ -174,7 +174,7 @@ export const rechteck = {
 			unitHoch: "",
 			isNotLengthUnit: true,
 			unit: "kg",
-			requires: ["p1", "p2", "p6", "dichte"],
+			requires: ["p1", "p2", "p5", "p6", "dichte"],
 		},
 		{
 			bezeichnung: "Eckenmaße (Diagonale)",
@@ -208,7 +208,7 @@ export const rechteck = {
 			},
 			formelTex: "\\(Wx = \\frac{B \\cdot H^3 - b \\cdot h^3}{6 H}\\)",
 			unitHoch: "³",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 		{
 			bezeichnung: "Axiales Trägheits&shy;moment",
@@ -229,7 +229,7 @@ export const rechteck = {
 			},
 			formelTex: "\\(Ix = \\frac{B \\cdot H^3 - b \\cdot h^3}{12}\\)",
 			unitHoch: "⁴",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 		{
 			bezeichnung: "Axiales Widerstands&shy;moment",
@@ -245,7 +245,7 @@ export const rechteck = {
 			},
 			formelTex: "\\(Wy = \\frac{H \\cdot B^3 - h \\cdot b^3}{6 B}\\)",
 			unitHoch: "³",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 		{
 			bezeichnung: "Axiales Trägheits&shy;moment",
@@ -261,7 +261,7 @@ export const rechteck = {
 			},
 			formelTex: "\\(Iy = \\frac{H \\cdot B^3 - h \\cdot b^3}{12}\\)",
 			unitHoch: "⁴",
-			requires: ["p1", "p2"],
+			requires: ["p1", "p2", "p5"],
 		},
 	],
 };
