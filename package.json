@@ -2,7 +2,7 @@
 	"name": "geometrierechner",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://www.geometrierechner.de",
+	"homepage": "https://geometrierechner.christianw.de",
 	"dependencies": {
 		"@craco/craco": "^6.2.0",
 		"@react-pdf/renderer": "^2.0.19",

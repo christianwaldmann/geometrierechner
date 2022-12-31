@@ -2,6 +2,6 @@
 
 Website for calculating properties of simple geometries.
 
-Hosted at www.geometrierechner.de.
+Hosted at geometrierechner.christianw.de.
 
 ![](Screenshot.png)

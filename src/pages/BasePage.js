@@ -20,7 +20,7 @@ BasePage.Header = function BasePageHeader({ active }) {
 				<div className="text-xs font-bold text-center text-white bg-blue-500">
 					<a
 						className="text-xs font-bold text-center text-white bg-blue-500"
-						href="https://www.geometrierechner.de"
+						href="https://geometrierechner.christianw.de"
 					>
 						This is a development version of the site. Click here to
 						see the live content.
