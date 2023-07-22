@@ -16,11 +16,11 @@ BasePage.Header = function BasePageHeader({ active }) {
 
 	return (
 		<header className="z-50 w-full bg-white shadow-sm ring-1 ring-gray-900 ring-opacity-5">
-			{process.env.REACT_APP_DEPLOYMENT_ENV === "stage" && (
+			{window._env_.GEOMETRIERECHNER_DEPLOYMENT_ENV === "staging" && (
 				<div className="text-xs font-bold text-center text-white bg-blue-500">
 					<a
 						className="text-xs font-bold text-center text-white bg-blue-500"
-						href="https://geometrierechner.christianw.de"
+						href={window._env_.GEOMETRIERECHNER_URL}
 					>
 						This is a development version of the site. Click here to
 						see the live content.
@@ -135,7 +135,10 @@ BasePage.Header = function BasePageHeader({ active }) {
 						</li>
 						<li className="">
 							<a
-								href="https://github.com/christianwaldmann/geometrierechner"
+								href={
+									window._env_
+										.GEOMETRIERECHNER_SOURCE_CODE_URL
+								}
 								className="flex items-center pl-6 text-sm font-medium border-l border-gray-200 hover:text-indigo-600"
 							>
 								<span>Quellcode</span>
@@ -179,7 +182,7 @@ BasePage.Header = function BasePageHeader({ active }) {
 					</li>
 					<li className="mx-6 border-t">
 						<a
-							href="https://github.com/christianwaldmann/geometrierechner"
+							href={window._env_.GEOMETRIERECHNER_SOURCE_CODE_URL}
 							className="flex items-center justify-between w-full py-2 text-base font-semibold text-gray-800 hover:text-gray-600"
 						>
 							<span>Quellcode</span>

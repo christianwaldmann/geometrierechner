@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+    frontend:
+        build:
+            context: .
+        environment:
+            - GEOMETRIERECHNER_DEPLOYMENT_ENV=prod
+            - GEOMETRIERECHNER_URL=http://localhost:3000
+            - GEOMETRIERECHNER_SOURCE_CODE_URL=https://github.com/geometrierechner/geometrierechner
+        ports:
+            - "3000:80"

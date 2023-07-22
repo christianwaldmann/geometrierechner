@@ -2,7 +2,6 @@
 	"name": "geometrierechner",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://geometrierechner.christianw.de",
 	"dependencies": {
 		"@craco/craco": "^6.2.0",
 		"@react-pdf/renderer": "^2.0.19",
@@ -19,8 +18,8 @@
 		"web-vitals": "^1.0.1"
 	},
 	"scripts": {
-		"start": "craco start",
-		"build": "craco build",
+		"start": "chmod +x ./env.sh && ./env.sh && cp env-config.js ./public/ && craco --openssl-legacy-provider start",
+		"build": "sh -ac '. ./.env; craco build'",
 		"test": "craco test",
 		"eject": "react-scripts eject",
 		"predeploy": "npm run build && cp CNAME build/CNAME",

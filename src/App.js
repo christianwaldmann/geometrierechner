@@ -12,7 +12,7 @@ export default function App() {
 			<MathJaxContext>
 				<Helmet>
 					<body className="bg-white sm:bg-gray-50" />
-					{process.env.REACT_APP_DEPLOYMENT_ENV === "stage" && (
+					{window._env_.GEOMETRIERECHNER_DEPLOYMENT_ENV === "staging" && (
 						<meta name="robots" content="noindex" />
 					)}
 				</Helmet>
