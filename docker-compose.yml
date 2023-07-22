@@ -8,5 +8,7 @@ services:
             - GEOMETRIERECHNER_DEPLOYMENT_ENV=prod
             - GEOMETRIERECHNER_URL=http://localhost:3000
             - GEOMETRIERECHNER_SOURCE_CODE_URL=https://github.com/geometrierechner/geometrierechner
+            - GEOMETRIERECHNER_UMAMI_TRACKING_LINK=http://localhost:3004
+            - GEOMETRIERECHNER_UMAMI_TRACKING_CODE=http://localhost:3005
         ports:
             - "3000:80"

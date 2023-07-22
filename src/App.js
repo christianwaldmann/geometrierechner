@@ -12,9 +12,15 @@ export default function App() {
 			<MathJaxContext>
 				<Helmet>
 					<body className="bg-white sm:bg-gray-50" />
-					{window._env_.GEOMETRIERECHNER_DEPLOYMENT_ENV === "staging" && (
-						<meta name="robots" content="noindex" />
-					)}
+					{window._env_.GEOMETRIERECHNER_DEPLOYMENT_ENV ===
+						"staging" && <meta name="robots" content="noindex" />}
+					<script
+						async
+						src={window._env_.GEOMETRIERECHNER_UMAMI_TRACKING_LINK}
+						data-website-id={
+							window._env_.GEOMETRIERECHNER_UMAMI_TRACKING_CODE
+						}
+					></script>
 				</Helmet>
 				<Router basename={process.env.PUBLIC_URL}>
 					<Switch>
